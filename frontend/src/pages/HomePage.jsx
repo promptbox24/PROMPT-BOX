@@ -48,7 +48,7 @@ const HomePage = () => {
               color: '#FFFFFF',
               boxShadow: '0 4px 15px rgba(138, 99, 255, 0.4)'
             }}>
-              ✨ AI-Powered Learning
+              AI-Powered Learning
             </div>
 
             <h1 className="display-huge" style={{ 
@@ -59,7 +59,7 @@ const HomePage = () => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              Learn Smarter with AI Prompts 🚀
+              Learn Smarter with AI Prompts
             </h1>
             <p className="body-large" style={{ 
               marginBottom: '40px',
