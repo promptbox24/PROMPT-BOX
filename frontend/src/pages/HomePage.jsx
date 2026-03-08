@@ -13,7 +13,7 @@ const HomePage = () => {
   };
 
   const handleCategoryClick = (categoryId) => {
-    scrollToPrompts();
+    navigate(`/category/${categoryId}`);
   };
 
   return (
