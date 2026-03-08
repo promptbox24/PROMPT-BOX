@@ -171,10 +171,10 @@ const HomePage = () => {
           }));
           setCategories(cats);
           
-          // Initialize all categories as expanded
+          // Initialize all categories as CLOSED by default
           const expanded = {};
           cats.forEach(cat => {
-            expanded[cat.id] = true;
+            expanded[cat.id] = false;
           });
           setExpandedCategories(expanded);
         }
