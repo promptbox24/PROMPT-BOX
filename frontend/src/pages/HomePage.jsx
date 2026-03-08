@@ -1,401 +1,393 @@
-import React from 'react';
-import { promptCategories, featuredPrompts, features, howItWorks } from '../data/mockPrompts';
-import CategoryCard from '../components/CategoryCard';
-import PromptCard from '../components/PromptCard';
-import { Sparkles, ArrowRight, Zap, Bot } from 'lucide-react';
+import React, { useState } from 'react';
+import { promptCategories } from '../data/mockPrompts';
 import { useNavigate } from 'react-router-dom';
+import { ArrowRight, BookOpen, Video, Briefcase, Zap, Code, Heart, PenTool, Palette, MessageCircle, Sparkles, CheckCircle, Clock, Layers, Users } from 'lucide-react';
+
+const categoryIcons = {
+  homework: BookOpen,
+  creative: PenTool,
+  gaming: Zap,
+  science: Layers,
+  art: Palette,
+  coding: Code,
+  math: Code,
+  reading: BookOpen,
+  languages: MessageCircle,
+  health: Heart
+};
 
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const scrollToPrompts = () => {
-    document.getElementById('prompts-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <div className="dark-container">
+    <div style={{ background: '#0A0118', minHeight: '100vh', color: '#fff' }}>
       {/* Hero Section */}
-      <section style={{ 
-        minHeight: 'calc(100vh - 80px)',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '60px 0',
-        background: 'radial-gradient(circle at 30% 50%, rgba(138, 99, 255, 0.15) 0%, transparent 50%)'
+      <section style={{
+        padding: '120px 7.6923% 80px',
+        background: 'radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15), transparent 70%)',
+        position: 'relative'
       }}>
-        <div style={{ 
-          maxWidth: '1400px',
-          margin: '0 auto',
-          width: '100%',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '60px',
-          alignItems: 'center'
-        }}>
-          {/* Left Content */}
-          <div>
-            <div style={{
-              display: 'inline-block',
-              padding: '8px 20px',
-              background: 'var(--brand-gradient)',
-              borderRadius: '20px',
-              marginBottom: '24px',
-              fontSize: '14px',
-              fontWeight: 700,
-              color: '#FFFFFF',
-              boxShadow: '0 4px 15px rgba(138, 99, 255, 0.4)'
-            }}>
-              AI-Powered Learning
-            </div>
-
-            <h1 className="display-huge" style={{ 
-              marginBottom: '24px',
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+            <h1 style={{
+              fontSize: '64px',
+              fontWeight: 800,
               lineHeight: '1.1',
-              background: 'linear-gradient(135deg, #FFFFFF 0%, #a78bfa 100%)',
+              marginBottom: '24px',
+              background: 'linear-gradient(135deg, #E0A4FC 0%, #FF69B4 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              textShadow: '0 10px 30px rgba(138, 99, 255, 0.5)',
-              transform: 'perspective(500px) rotateX(5deg)',
-              transformStyle: 'preserve-3d'
+              letterSpacing: '-0.02em'
             }}>
-              Learn Smarter with AI Prompts
+              Your Ultimate AI Prompt Library
             </h1>
-            <p className="body-large" style={{ 
-              marginBottom: '40px',
-              color: 'var(--text-secondary)',
+            
+            <p style={{
               fontSize: '20px',
+              color: '#B0A0E0',
+              marginBottom: '48px',
               lineHeight: '1.6'
             }}>
-              Discover awesome AI prompts for homework, creativity, coding, and more! Make learning fun and easy with Prompt Box.
+              Discover 150+ premium AI prompts across 10 categories, or let BOXBOT craft custom prompts tailored to your exact needs.
             </p>
-            
-            <div style={{ 
-              display: 'flex', 
-              gap: '16px',
-              flexWrap: 'wrap'
-            }}>
-              <button 
-                onClick={scrollToPrompts}
-                className="btn-primary"
-                style={{ fontSize: '18px', padding: '18px 32px' }}
-              >
-                Explore Prompts
-                <ArrowRight size={22} />
-              </button>
-              
-              <button 
+
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button
                 onClick={() => navigate('/chatbot')}
-                className="btn-secondary"
+                className="hero-button"
                 style={{
+                  padding: '16px 32px',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  background: 'linear-gradient(135deg, #4F46E5 0%, #EC4899 100%)',
+                  border: 'none',
+                  borderRadius: '12px',
+                  color: '#fff',
+                  cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px',
-                  fontSize: '18px',
-                  padding: '18px 32px'
+                  boxShadow: '0 8px 30px rgba(236, 72, 153, 0.4)'
                 }}
               >
-                <Bot size={22} />
-                Try Box Bot AI
+                Browse All Prompts
+                <ArrowRight size={20} />
+              </button>
+
+              <button
+                onClick={() => navigate('/chatbot')}
+                style={{
+                  padding: '16px 32px',
+                  fontSize: '18px',
+                  fontWeight: 600,
+                  background: 'rgba(139, 92, 246, 0.1)',
+                  border: '2px solid #8B5CF6',
+                  borderRadius: '12px',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(139, 92, 246, 0.2)';
+                  e.currentTarget.style.boxShadow = '0 0 30px rgba(139, 92, 246, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(139, 92, 246, 0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <Sparkles size={20} />
+                Try BOXBOT
               </button>
             </div>
-          </div>
-
-          {/* Right Side - Floating Prompt Cards */}
-          <div style={{ 
-            position: 'relative',
-            height: '550px'
-          }}>
-            {featuredPrompts.slice(0, 3).map((prompt, index) => (
-              <div
-                key={prompt.id}
-                className="floating-card"
-                style={{
-                  position: 'absolute',
-                  background: 'var(--bg-secondary)',
-                  border: '3px solid var(--border-subtle)',
-                  padding: '24px',
-                  borderRadius: '20px',
-                  width: '85%',
-                  boxShadow: '0 10px 40px rgba(138, 99, 255, 0.3)',
-                  transform: `translateY(${index * 120}px) translateX(${index * 30}px) rotateZ(${index * 3}deg)`,
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  animationDelay: `${index * 0.5}s`,
-                  zIndex: 3 - index,
-                  cursor: 'pointer'
-                }}
-              >
-                <div style={{
-                  fontSize: '32px',
-                  marginBottom: '12px'
-                }}>
-                  {['🎯', '✍️', '💡'][index]}
-                </div>
-                <h4 className="heading-3" style={{ marginBottom: '10px', fontWeight: 700 }}>
-                  {prompt.title}
-                </h4>
-                <p className="body-small" style={{ 
-                  color: 'var(--brand-primary)',
-                  textTransform: 'uppercase',
-                  fontSize: '12px',
-                  letterSpacing: '0.08em',
-                  fontWeight: 600
-                }}>
-                  {prompt.category}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section style={{ 
-        padding: '100px 0',
-        borderTop: '2px solid var(--border-subtle)',
-        background: 'radial-gradient(circle at 70% 50%, rgba(74, 172, 254, 0.1) 0%, transparent 50%)'
-      }}>
+      <section style={{ padding: '80px 7.6923%' }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 className="display-large" style={{ 
-              marginBottom: '20px',
-              background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: 700,
+              marginBottom: '16px',
+              background: 'linear-gradient(135deg, #fff 0%, #8B5CF6 100%)',
               WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
-              transform: 'perspective(500px) translateZ(20px)',
-              transformStyle: 'preserve-3d',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'perspective(500px) translateZ(30px) scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'perspective(500px) translateZ(20px) scale(1)';
-            }}
-            >
-              Choose Your Adventure
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Browse by Category
             </h2>
-            <p className="body-large" style={{ color: 'var(--text-secondary)' }}>
-              Pick a category and start exploring amazing AI prompts!
+            <p style={{ fontSize: '18px', color: '#B0A0E0' }}>
+              Choose from our curated collection of AI prompts
             </p>
           </div>
-          
+
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '28px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px'
           }}>
-            {promptCategories.map(category => (
-              <CategoryCard 
-                key={category.id} 
-                category={category}
-              />
-            ))}
+            {promptCategories.map(category => {
+              const IconComponent = categoryIcons[category.id];
+              return (
+                <div
+                  key={category.id}
+                  onClick={() => navigate(`/category/${category.id}`)}
+                  style={{
+                    background: category.color,
+                    padding: '32px',
+                    borderRadius: '16px',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    position: 'relative',
+                    overflow: 'hidden'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  {/* Icon */}
+                  <div style={{
+                    width: '56px',
+                    height: '56px',
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '20px'
+                  }}>
+                    <IconComponent size={28} color="#fff" />
+                  </div>
+
+                  <h3 style={{
+                    fontSize: '22px',
+                    fontWeight: 700,
+                    marginBottom: '12px',
+                    color: '#fff'
+                  }}>
+                    {category.title}
+                  </h3>
+
+                  <p style={{
+                    fontSize: '15px',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    marginBottom: '20px',
+                    lineHeight: '1.5'
+                  }}>
+                    {category.description}
+                  </p>
+
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}>
+                    <span style={{
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      color: 'rgba(255, 255, 255, 0.9)'
+                    }}>
+                      15+ Prompts
+                    </span>
+                    <ArrowRight size={20} color="rgba(255, 255, 255, 0.8)" />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Box Bot AI Section */}
-      <section style={{ 
-        padding: '100px 0',
-        borderTop: '2px solid var(--border-subtle)',
-        background: 'radial-gradient(circle at 50% 50%, rgba(138, 99, 255, 0.2) 0%, transparent 60%)'
-      }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '16px',
-            marginBottom: '28px'
-          }}>
-            <div style={{
-              width: '80px',
-              height: '80px',
-              background: 'var(--brand-gradient)',
-              borderRadius: '24px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '42px',
-              boxShadow: '0 8px 30px rgba(138, 99, 255, 0.5)',
-              animation: 'bounce 2s ease-in-out infinite'
+      {/* Why Choose Section */}
+      <section style={{ padding: '80px 7.6923%', background: 'rgba(139, 92, 246, 0.03)' }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <h2 style={{
+              fontSize: '48px',
+              fontWeight: 700,
+              marginBottom: '16px'
             }}>
-              🤖
-            </div>
+              Why Choose Our Prompts?
+            </h2>
+            <p style={{ fontSize: '18px', color: '#B0A0E0' }}>
+              Designed for results, built for everyone
+            </p>
           </div>
-
-          <h2 className="display-large" style={{ 
-            marginBottom: '24px',
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
-            transform: 'perspective(500px) translateZ(20px)',
-            transformStyle: 'preserve-3d'
-          }}>
-            Meet Box Bot AI!
-          </h2>
-          <p className="body-large" style={{ 
-            marginBottom: '32px',
-            color: 'var(--text-secondary)',
-            fontSize: '20px',
-            lineHeight: '1.6',
-            maxWidth: '700px',
-            margin: '0 auto 40px'
-          }}>
-            Your personal AI assistant that creates custom prompts just for you! Tell Box Bot what you need help with, and watch the magic happen ✨
-          </p>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '24px',
-            marginBottom: '48px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px'
           }}>
             {[
-              { icon: '⚡', title: 'Super Fast', desc: 'Get prompts in seconds' },
-              { icon: '🎯', title: 'Custom Made', desc: 'Tailored to your needs' },
-              { icon: '🧠', title: 'AI Powered', desc: 'Uses GPT-4o AI' }
-            ].map((feature, i) => (
-              <div key={i} style={{
-                padding: '32px',
-                background: 'var(--bg-secondary)',
-                border: '2px solid var(--border-subtle)',
-                borderRadius: '20px',
-                transition: 'all 0.3s ease'
-              }} className="dark-hover">
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>
-                  {feature.icon}
+              { icon: CheckCircle, title: 'Ready-to-Use Prompts', desc: 'Copy and paste immediately into any AI tool. No editing required.' },
+              { icon: Clock, title: 'Save Time', desc: 'Skip the trial and error. Get proven prompts that work instantly.' },
+              { icon: Layers, title: 'Organized Library', desc: '150+ prompts across 10 categories, all in one place.' },
+              { icon: Users, title: 'For Everyone', desc: 'Whether you\'re a student, creator, or professional - we have prompts for you.' }
+            ].map((feature, i) => {
+              const IconComp = feature.icon;
+              return (
+                <div
+                  key={i}
+                  style={{
+                    background: 'rgba(17, 24, 39, 0.5)',
+                    backdropFilter: 'blur(10px)',
+                    padding: '32px',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(139, 92, 246, 0.2)',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.5)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.2)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <IconComp size={40} color="#8B5CF6" style={{ marginBottom: '20px' }} />
+                  <h3 style={{
+                    fontSize: '20px',
+                    fontWeight: 700,
+                    marginBottom: '12px'
+                  }}>
+                    {feature.title}
+                  </h3>
+                  <p style={{
+                    fontSize: '15px',
+                    color: '#B0A0E0',
+                    lineHeight: '1.6'
+                  }}>
+                    {feature.desc}
+                  </p>
                 </div>
-                <h3 className="heading-3" style={{ marginBottom: '8px', fontWeight: 700 }}>
-                  {feature.title}
-                </h3>
-                <p className="body-medium" style={{ color: 'var(--text-secondary)' }}>
-                  {feature.desc}
-                </p>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* BOXBOT Section */}
+      <section style={{ padding: '80px 7.6923%' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{
+            background: 'linear-gradient(135deg, #4F46E5 0%, #8B5CF6 50%, #EC4899 100%)',
+            padding: '60px',
+            borderRadius: '24px',
+            textAlign: 'center',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            {/* Decorative elements */}
+            <div style={{
+              position: 'absolute',
+              top: '-50px',
+              right: '-50px',
+              width: '200px',
+              height: '200px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: '50%',
+              filter: 'blur(40px)'
+            }}></div>
+
+            <div style={{
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '24px'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Sparkles size={32} />
+                </div>
               </div>
-            ))}
+
+              <h2 style={{
+                fontSize: '42px',
+                fontWeight: 800,
+                marginBottom: '20px',
+                color: '#fff'
+              }}>
+                Meet BOXBOT AI
+              </h2>
+
+              <p style={{
+                fontSize: '18px',
+                marginBottom: '36px',
+                color: 'rgba(255, 255, 255, 0.95)',
+                maxWidth: '700px',
+                margin: '0 auto 36px',
+                lineHeight: '1.6'
+              }}>
+                Can't find the perfect prompt? Let our AI create one for you! Just describe what you need, and BOXBOT will craft a custom prompt in seconds.
+              </p>
+
+              <button
+                onClick={() => navigate('/chatbot')}
+                style={{
+                  padding: '18px 40px',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  background: '#fff',
+                  color: '#4F46E5',
+                  border: 'none',
+                  borderRadius: '12px',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px) scale(1.05)';
+                  e.currentTarget.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
+                }}
+              >
+                Try BOXBOT Now
+                <ArrowRight size={20} />
+              </button>
+            </div>
           </div>
-
-          <button 
-            onClick={() => navigate('/chatbot')}
-            className="btn-primary"
-            style={{ fontSize: '20px', padding: '20px 40px' }}
-          >
-            <Sparkles size={24} />
-            Chat with Box Bot Now
-            <ArrowRight size={24} />
-          </button>
-        </div>
-      </section>
-
-      {/* Featured Prompts Section */}
-      <section 
-        id="prompts-section"
-        style={{ 
-          padding: '100px 0',
-          borderTop: '2px solid var(--border-subtle)'
-        }}
-      >
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <h2 className="display-large" style={{ 
-            textAlign: 'center',
-            marginBottom: '20px',
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
-            transform: 'perspective(500px) translateZ(20px)',
-            transformStyle: 'preserve-3d'
-          }}>
-            Popular Prompts
-          </h2>
-          <p className="body-large" style={{ 
-            textAlign: 'center',
-            marginBottom: '60px',
-            color: 'var(--text-secondary)'
-          }}>
-            Try these awesome prompts that other students love!
-          </p>
-          
-          <div className="dark-grid">
-            {featuredPrompts.map(prompt => (
-              <PromptCard key={prompt.id} prompt={prompt} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section style={{ 
-        padding: '100px 0',
-        borderTop: '2px solid var(--border-subtle)',
-        textAlign: 'center',
-        background: 'radial-gradient(circle at 50% 50%, rgba(138, 99, 255, 0.15) 0%, transparent 60%)'
-      }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ fontSize: '64px', marginBottom: '24px' }}>🚀</div>
-          <h2 className="display-large" style={{ 
-            marginBottom: '24px',
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
-            transform: 'perspective(500px) translateZ(20px)',
-            transformStyle: 'preserve-3d'
-          }}>
-            Ready to Learn Smarter?
-          </h2>
-          <p className="body-large" style={{ 
-            marginBottom: '40px',
-            color: 'var(--text-secondary)',
-            fontSize: '19px'
-          }}>
-            Join thousands of students using Prompt Box to ace their homework and projects!
-          </p>
-          
-          <button 
-            onClick={() => navigate('/login')}
-            className="btn-primary"
-            style={{ fontSize: '20px', padding: '20px 40px' }}
-          >
-            Get Started Free
-            <ArrowRight size={24} />
-          </button>
         </div>
       </section>
 
       {/* Footer */}
       <footer style={{
-        borderTop: '2px solid var(--border-subtle)',
-        padding: '50px 0',
-        textAlign: 'center',
-        background: 'var(--bg-secondary)'
+        padding: '60px 7.6923%',
+        borderTop: '1px solid rgba(139, 92, 246, 0.2)',
+        textAlign: 'center'
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <p className="body-medium" style={{ 
-            color: 'var(--text-muted)',
-            marginBottom: '20px',
-            fontSize: '15px'
-          }}>
-            © 2025 Prompt Box. Made with ❤️ for students everywhere
-          </p>
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            gap: '32px',
-            flexWrap: 'wrap'
-          }}>
-            <a href="#" className="dark-nav-link" style={{ fontSize: '15px' }}>Privacy Policy</a>
-            <a href="#" className="dark-nav-link" style={{ fontSize: '15px' }}>Terms of Service</a>
-            <a href="#" className="dark-nav-link" style={{ fontSize: '15px' }}>Contact Us</a>
-            <a href="#" className="dark-nav-link" style={{ fontSize: '15px' }}>Help</a>
-          </div>
-        </div>
+        <p style={{ color: '#B0A0E0', fontSize: '15px' }}>
+          © 2025 Prompt Box. Powered by BOXBOT AI. All rights reserved.
+        </p>
       </footer>
     </div>
   );
