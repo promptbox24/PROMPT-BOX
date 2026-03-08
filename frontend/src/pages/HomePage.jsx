@@ -53,7 +53,10 @@ const HomePage = () => {
               background: 'linear-gradient(135deg, #FFFFFF 0%, #a78bfa 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+              backgroundClip: 'text',
+              textShadow: '0 10px 30px rgba(138, 99, 255, 0.5)',
+              transform: 'perspective(500px) rotateX(5deg)',
+              transformStyle: 'preserve-3d'
             }}>
               Learn Smarter with AI Prompts
             </h1>
@@ -158,9 +161,20 @@ const HomePage = () => {
               background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
-              Choose Your Adventure 🎨
+              backgroundClip: 'text',
+              textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
+              transform: 'perspective(500px) translateZ(20px)',
+              transformStyle: 'preserve-3d',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'perspective(500px) translateZ(30px) scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'perspective(500px) translateZ(20px) scale(1)';
+            }}
+            >
+              Choose Your Adventure
             </h2>
             <p className="body-large" style={{ color: 'var(--text-secondary)' }}>
               Pick a category and start exploring amazing AI prompts!
@@ -216,9 +230,12 @@ const HomePage = () => {
             background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            backgroundClip: 'text',
+            textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
+            transform: 'perspective(500px) translateZ(20px)',
+            transformStyle: 'preserve-3d'
           }}>
-            Meet Box Bot AI! 🎉
+            Meet Box Bot AI!
           </h2>
           <p className="body-large" style={{ 
             marginBottom: '32px',
@@ -289,9 +306,12 @@ const HomePage = () => {
             background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            backgroundClip: 'text',
+            textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
+            transform: 'perspective(500px) translateZ(20px)',
+            transformStyle: 'preserve-3d'
           }}>
-            Popular Prompts 🔥
+            Popular Prompts
           </h2>
           <p className="body-large" style={{ 
             textAlign: 'center',
@@ -323,7 +343,10 @@ const HomePage = () => {
             background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
+            backgroundClip: 'text',
+            textShadow: '0 8px 25px rgba(138, 99, 255, 0.6)',
+            transform: 'perspective(500px) translateZ(20px)',
+            transformStyle: 'preserve-3d'
           }}>
             Ready to Learn Smarter?
           </h2>
