@@ -254,15 +254,34 @@ body {
   margin: 0 auto;
 }
 
-/* Hover Effects - More Playful */
+/* Hover Effects - More Playful but Subtle on Categories */
 .dark-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 20px;
 }
 
 .dark-hover:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 35px rgba(138, 99, 255, 0.4);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(138, 99, 255, 0.35);
+}
+
+/* Category Cards - Reduced 3D Effect */
+.category-card {
+  transition: all 0.3s ease !important;
+}
+
+.category-card:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+}
+
+/* Homepage Elements - Enhanced Hover */
+.hero-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(138, 99, 255, 0.5);
 }
 
 /* Animations */
