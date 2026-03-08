@@ -75,15 +75,16 @@ const CategoryCard = ({ category }) => {
       }}
       onMouseMove={(e) => {
         if (isExpanded) return;
+        // Reduced 3D effect - much more subtle
         const card = e.currentTarget;
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.05)`;
+        const rotateX = (y - centerY) / 50; // Reduced from /10 to /50
+        const rotateY = (centerX - x) / 50; // Reduced from /10 to /50
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale(1.01)`;
       }}
       onMouseLeave={(e) => {
         if (isExpanded) return;
