@@ -175,10 +175,11 @@ body {
   transform: translateY(-1px) scale(0.98);
 }
 
-/* Header */
+/* Header - Kid-Friendly */
 .dark-header {
-  background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--border-subtle);
   padding: 16px 7.6923%;
   display: flex;
   align-items: center;
@@ -192,10 +193,21 @@ body {
 }
 
 .dark-logo {
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+
+.dark-logo:hover {
+  transform: scale(1.05);
+}
+
+.dark-logo img {
+  height: 50px;
+  width: auto;
 }
 
 .dark-nav {
@@ -205,19 +217,24 @@ body {
 }
 
 .dark-nav-link {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 18px;
-  font-weight: 400;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 12px;
 }
 
 .dark-nav-link:hover {
-  color: var(--text-primary);
+  color: var(--brand-primary);
+  background: var(--brand-hover);
+  transform: translateY(-2px);
 }
 
 .dark-nav-link.active {
-  color: var(--brand-active);
+  color: var(--brand-primary);
+  background: var(--brand-hover);
 }
 
 /* Container */
@@ -237,29 +254,44 @@ body {
   margin: 0 auto;
 }
 
-/* Hover Effects */
+/* Hover Effects - More Playful */
 .dark-hover {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
 }
 
 .dark-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 255, 209, 0.2);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(138, 99, 255, 0.4);
 }
 
 /* Animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-25px) rotate(2deg);
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-card {
+  animation: float 4s ease-in-out infinite;
+}
+
 .floating-card:hover {
-  transform: translateY(0) !important;
-  box-shadow: 0 12px 48px rgba(0, 255, 209, 0.3);
+  animation-play-state: paused;
+  transform: translateY(-10px) scale(1.05) !important;
+  box-shadow: 0 15px 50px rgba(138, 99, 255, 0.5);
 }
 
 /* Spin animation for loading */
