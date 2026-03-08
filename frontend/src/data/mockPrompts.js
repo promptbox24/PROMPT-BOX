@@ -5,70 +5,70 @@ export const promptCategories = [
     id: 'homework',
     title: 'Homework Helper',
     description: 'Get help with your homework and learn faster',
-    icon: '📚',
+    image: 'https://images.unsplash.com/photo-1758612898701-e2f2958f219d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxob21ld29yayUyMHN0dWRlbnQlMjBzdHVkeWluZyUyMGJvb2tzJTIwZWR1Y2F0aW9ufGVufDB8fHx8MTc3Mjk1NzA3OXww&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
   },
   {
     id: 'creative',
     title: 'Creative Writing',
     description: 'Write amazing stories and adventures',
-    icon: '✍️',
+    image: 'https://images.unsplash.com/photo-1764087957302-ef0756ed8e0a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHdyaXRpbmclMjBub3RlYm9vayUyMHBlbiUyMHBhcGVyfGVufDB8fHx8MTc3Mjk1NzA4M3ww&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
   },
   {
     id: 'gaming',
     title: 'Gaming & Fun',
     description: 'Create game ideas and fun activities',
-    icon: '🎮',
+    image: 'https://images.unsplash.com/photo-1644571580854-114d7d8fa383?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBjb250cm9sbGVyJTIwcGxheXN0YXRpb24lMjBjb25zb2xlfGVufDB8fHx8MTc3Mjk1NzA4OHww&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
   },
   {
     id: 'science',
     title: 'Science Explorer',
     description: 'Discover cool science facts and experiments',
-    icon: '🔬',
+    image: 'https://images.unsplash.com/photo-1614290335665-03caa2185a82?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwyfHxzY2llbmNlJTIwbGFib3JhdG9yeSUyMG1pY3Jvc2NvcGUlMjBleHBlcmltZW50fGVufDB8fHx8MTc3Mjk1NzA5MXww&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
   },
   {
     id: 'art',
     title: 'Art & Drawing',
     description: 'Get creative ideas for your art projects',
-    icon: '🎨',
+    image: 'https://images.unsplash.com/photo-1752649935031-7c35f43b24b0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxhcnQlMjBwYWludGluZyUyMHBhbGV0dGUlMjBicnVzaCUyMGNhbnZhc3xlbnwwfHx8fDE3NzI5NTcwOTZ8MA&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
   },
   {
     id: 'coding',
     title: 'Coding Adventures',
     description: 'Learn to code with fun projects',
-    icon: '💻',
+    image: 'https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjBwcm9ncmFtbWluZyUyMGxhcHRvcCUyMGRldmVsb3BlcnxlbnwwfHx8fDE3NzI5NTcxMjZ8MA&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)'
   },
   {
     id: 'math',
     title: 'Math Magic',
     description: 'Make math fun and easy to understand',
-    icon: '🔢',
+    image: 'https://images.unsplash.com/photo-1754304342484-3256d59778e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxtYXRoZW1hdGljcyUyMG51bWJlcnMlMjBjYWxjdWxhdG9yJTIwZXF1YXRpb258ZW58MHx8fHwxNzcyOTU3MTMxfDA&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
   },
   {
     id: 'reading',
     title: 'Reading & Books',
     description: 'Find book summaries and reading tips',
-    icon: '📖',
+    image: 'https://images.unsplash.com/photo-1652711475965-61d2e00904e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxyZWFkaW5nJTIwYm9vayUyMGxpYnJhcnklMjBsaXRlcmF0dXJlfGVufDB8fHx8MTc3Mjk1NzEzNXww&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
   },
   {
     id: 'languages',
     title: 'Learn Languages',
     description: 'Practice new languages with AI help',
-    icon: '🌍',
+    image: 'https://images.unsplash.com/photo-1740635551152-7fa6854a0a10?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxsYW5ndWFnZSUyMGxlYXJuaW5nJTIwdHJhbnNsYXRpb24lMjBnbG9iZXxlbnwwfHx8fDE3NzI5NTcxMzd8MA&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
   },
   {
     id: 'health',
     title: 'Health & Fitness',
     description: 'Stay healthy and active with tips',
-    icon: '💪',
+    image: 'https://images.unsplash.com/photo-1634144646738-809a0f8897c4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxmaXRuZXNzJTIwZXhlcmNpc2UlMjBoZWFsdGglMjB3b3Jrb3V0fGVufDB8fHx8MTc3Mjk1NzE0Mnww&ixlib=rb-4.1.0&q=85',
     color: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)'
   }
 ];
