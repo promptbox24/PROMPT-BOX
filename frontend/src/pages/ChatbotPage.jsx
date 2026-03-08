@@ -1,15 +1,53 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Sparkles, Loader2, Lightbulb } from 'lucide-react';
+import { Send, Sparkles, Loader2, Copy, Check } from 'lucide-react';
+
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
+// Copy button for chat messages
+const MessageCopyButton = ({ text }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="chatbot-copy-btn"
+      data-testid="chatbot-copy-btn"
+    >
+      {copied ? (
+        <>
+          <Check size={14} />
+          <span>Copied!</span>
+        </>
+      ) : (
+        <>
+          <Copy size={14} />
+          <span>Copy Prompt</span>
+        </>
+      )}
+    </button>
+  );
+};
 
 const ChatbotPage = ({ user }) => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hi there! I\'m Box Bot 🤖✨\n\nI\'m your personal AI prompt creator! Just tell me:\n• What subject you need help with\n• What you\'re trying to do\n• Your grade level\n\nI\'ll create the perfect AI prompt for you! Let\'s get started 🚀'
+      content: "Hi there! I'm Box Bot AI ✨\n\nI'm your personal AI prompt creator! Just tell me:\n• What subject you need help with\n• What you're trying to do\n• Your grade level\n\nI'll create the perfect AI prompt for you! Let's get started!"
     }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [sessionId, setSessionId] = useState(null);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -21,7 +59,6 @@ const ChatbotPage = ({ user }) => {
   }, [messages]);
 
   const generateEnhancedPrompt = (userRequest) => {
-    // Enhanced AI-like response with better prompt generation
     const prompts = {
       'homework': `Here's your custom homework helper prompt:\n\n"I need help with [SUBJECT] homework. I'm in [GRADE] grade. Please:\n1. Explain the concept in simple terms\n2. Show me step-by-step examples\n3. Give me practice questions\n4. Check my understanding\n\nMake it fun and easy to understand! Use examples from everyday life."\n\n✨ This prompt will help you understand your homework better!`,
       
@@ -36,7 +73,6 @@ const ChatbotPage = ({ user }) => {
       'coding': `Here's your coding helper prompt:\n\n"I want to learn [CODING CONCEPT] using [LANGUAGE]. I'm a [SKILL LEVEL] coder. Please:\n1. Explain it in simple terms\n2. Show me a fun example project\n3. Break down the code step-by-step\n4. Point out common mistakes\n5. Give me challenges to practice\n\nMake coding fun and easy to understand!"\n\n💻 Time to become a coding superstar!`
     };
 
-    // Detect keywords in user request
     const request = userRequest.toLowerCase();
     
     if (request.includes('homework') || request.includes('assignment')) {
@@ -53,7 +89,6 @@ const ChatbotPage = ({ user }) => {
       return prompts['coding'];
     }
     
-    // Default comprehensive prompt
     return `Here's your custom AI prompt:\n\n"I need help with ${userRequest}. Please:\n1. Explain it clearly and simply\n2. Give me step-by-step instructions\n3. Show real examples\n4. Make it appropriate for my age/level\n5. Make it interesting and fun!\n\nHelp me understand this topic completely!"\n\n✨ Use this prompt with ChatGPT, Claude, or any AI tool!\n\n💡 **Pro Tip:** You can customize the parts in [brackets] to match exactly what you need!`;
   };
 
@@ -66,17 +101,15 @@ const ChatbotPage = ({ user }) => {
     setIsLoading(true);
 
     try {
-      // Call real backend API
-      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-      const response = await fetch(`${BACKEND_URL}/api/chat/message`, {
+      const response = await fetch(`${API_URL}/api/chat/message`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        credentials: 'include', // Include cookies for auth
+        credentials: 'include',
         body: JSON.stringify({
           message: userMessage,
-          session_id: messages.length > 1 ? messages[1]?.session_id : undefined
+          session_id: sessionId
         })
       });
 
@@ -85,15 +118,14 @@ const ChatbotPage = ({ user }) => {
       }
 
       const data = await response.json();
+      setSessionId(data.session_id);
       
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: data.reply,
-        session_id: data.session_id
+        content: data.reply
       }]);
     } catch (error) {
       console.error('Chat error:', error);
-      // Fallback to enhanced mock response
       const mockResponse = generateEnhancedPrompt(userMessage);
       setMessages(prev => [...prev, { 
         role: 'assistant', 
@@ -124,8 +156,8 @@ const ChatbotPage = ({ user }) => {
     <div className="dark-container" style={{
       minHeight: 'calc(100vh - 80px)',
       padding: '40px 20px',
-      background: 'radial-gradient(circle at 50% 20%, rgba(138, 99, 255, 0.15) 0%, transparent 50%)'
-    }}>
+      background: 'radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 50%)'
+    }} data-testid="chatbot-page">
       <div style={{
         maxWidth: '1000px',
         margin: '0 auto',
@@ -147,28 +179,35 @@ const ChatbotPage = ({ user }) => {
             <div style={{
               width: '70px',
               height: '70px',
-              background: 'var(--brand-gradient)',
+              background: 'var(--accent-gradient)',
               borderRadius: '20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '38px',
-              boxShadow: '0 6px 25px rgba(138, 99, 255, 0.5)',
+              boxShadow: '0 10px 40px rgba(139, 92, 246, 0.5)',
               animation: 'bounce 2s ease-in-out infinite'
             }}>
-              🤖
+              <Sparkles size={36} color="white" />
             </div>
           </div>
-          <h1 className="display-medium" style={{
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #8a63ff 100%)',
+          <h1 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '42px',
+            fontWeight: 800,
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #8B5CF6 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-            marginBottom: '8px'
+            marginBottom: '8px',
+            letterSpacing: '2px'
           }}>
             Box Bot AI
           </h1>
-          <p className="body-medium" style={{ color: 'var(--text-secondary)', fontSize: '16px' }}>
+          <p style={{ 
+            fontFamily: 'var(--font-heading)',
+            color: 'var(--text-secondary)', 
+            fontSize: '16px' 
+          }}>
             Your personal AI prompt generator ✨
           </p>
         </div>
@@ -176,11 +215,13 @@ const ChatbotPage = ({ user }) => {
         {/* Quick Prompts */}
         {messages.length === 1 && (
           <div style={{ marginBottom: '24px' }}>
-            <p className="body-small" style={{ 
+            <p style={{ 
+              fontFamily: 'var(--font-heading)',
               color: 'var(--text-muted)', 
               marginBottom: '12px',
               textAlign: 'center',
-              fontWeight: 600
+              fontWeight: 600,
+              fontSize: '14px'
             }}>
               💡 Quick Start:
             </p>
@@ -196,16 +237,27 @@ const ChatbotPage = ({ user }) => {
                   onClick={() => setInput(prompt)}
                   style={{
                     padding: '10px 18px',
-                    background: 'var(--brand-hover)',
-                    border: '2px solid var(--brand-primary)',
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--border-subtle)',
                     borderRadius: '12px',
                     color: 'var(--text-primary)',
+                    fontFamily: 'var(--font-heading)',
                     fontSize: '14px',
-                    fontWeight: 600,
+                    fontWeight: 500,
                     cursor: 'pointer',
                     transition: 'all 0.3s ease'
                   }}
-                  className="dark-hover"
+                  onMouseEnter={(e) => {
+                    e.target.style.background = 'var(--bg-card-hover)';
+                    e.target.style.borderColor = 'var(--accent-purple)';
+                    e.target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'var(--bg-card)';
+                    e.target.style.borderColor = 'var(--border-subtle)';
+                    e.target.style.transform = 'translateY(0)';
+                  }}
+                  data-testid={`quick-prompt-${i}`}
                 >
                   {prompt}
                 </button>
@@ -218,45 +270,54 @@ const ChatbotPage = ({ user }) => {
         <div style={{
           flex: 1,
           overflowY: 'auto',
-          background: 'var(--bg-secondary)',
-          border: '2px solid var(--border-subtle)',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-subtle)',
           borderRadius: '24px',
           padding: '28px',
           marginBottom: '24px',
-          boxShadow: '0 10px 40px rgba(138, 99, 255, 0.2)'
-        }}>
+          boxShadow: '0 10px 40px rgba(139, 92, 246, 0.1)'
+        }} data-testid="chat-messages">
           {messages.map((message, index) => (
             <div
               key={index}
               style={{
-                marginBottom: '28px',
+                marginBottom: '24px',
                 display: 'flex',
                 justifyContent: message.role === 'user' ? 'flex-end' : 'flex-start'
               }}
             >
               <div
                 style={{
-                  maxWidth: '80%',
+                  maxWidth: '85%',
                   padding: '18px 24px',
                   background: message.role === 'user' 
-                    ? 'var(--brand-gradient)' 
-                    : 'rgba(138, 99, 255, 0.15)',
+                    ? 'var(--accent-gradient)' 
+                    : 'var(--bg-secondary)',
                   color: '#FFFFFF',
                   borderRadius: '20px',
-                  border: message.role === 'assistant' ? '2px solid var(--border-subtle)' : 'none',
+                  border: message.role === 'assistant' ? '1px solid var(--border-subtle)' : 'none',
                   boxShadow: message.role === 'user' 
-                    ? '0 4px 15px rgba(138, 99, 255, 0.4)' 
-                    : '0 2px 10px rgba(138, 99, 255, 0.2)'
+                    ? '0 6px 20px rgba(139, 92, 246, 0.4)' 
+                    : '0 4px 15px rgba(0, 0, 0, 0.2)'
                 }}
+                data-testid={`chat-message-${index}`}
               >
-                <p className="body-medium" style={{ 
+                <p style={{ 
                   whiteSpace: 'pre-wrap',
                   lineHeight: '1.7',
                   color: '#FFFFFF',
-                  fontSize: '16px'
+                  fontSize: '15px',
+                  fontFamily: 'var(--font-body)'
                 }}>
                   {message.content}
                 </p>
+                
+                {/* Auto-copy box for assistant messages */}
+                {message.role === 'assistant' && index > 0 && (
+                  <div className="chatbot-message-actions">
+                    <MessageCopyButton text={message.content} />
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -266,14 +327,21 @@ const ChatbotPage = ({ user }) => {
               display: 'flex',
               alignItems: 'center',
               gap: '12px',
-              color: 'var(--brand-primary)',
-              padding: '12px 20px',
-              background: 'var(--brand-hover)',
+              color: 'var(--accent-purple)',
+              padding: '14px 20px',
+              background: 'var(--bg-secondary)',
               borderRadius: '16px',
-              width: 'fit-content'
+              width: 'fit-content',
+              border: '1px solid var(--border-subtle)'
             }}>
               <Loader2 className="animate-spin" size={20} />
-              <span className="body-medium" style={{ fontWeight: 600 }}>Box Bot is creating your prompt...</span>
+              <span style={{ 
+                fontFamily: 'var(--font-heading)',
+                fontWeight: 600,
+                fontSize: '14px'
+              }}>
+                Box Bot is creating your prompt...
+              </span>
             </div>
           )}
 
@@ -294,16 +362,26 @@ const ChatbotPage = ({ user }) => {
             style={{
               flex: 1,
               padding: '18px 20px',
-              background: 'var(--bg-secondary)',
-              border: '2px solid var(--border-subtle)',
-              borderRadius: '20px',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '16px',
               color: 'var(--text-primary)',
-              fontSize: '16px',
-              fontFamily: 'inherit',
+              fontFamily: 'var(--font-body)',
+              fontSize: '15px',
               resize: 'none',
               minHeight: '70px',
-              maxHeight: '140px'
+              maxHeight: '140px',
+              transition: 'all 0.3s ease'
             }}
+            onFocus={(e) => {
+              e.target.style.borderColor = 'var(--accent-purple)';
+              e.target.style.boxShadow = '0 0 20px rgba(139, 92, 246, 0.2)';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = 'var(--border-subtle)';
+              e.target.style.boxShadow = 'none';
+            }}
+            data-testid="chat-input"
           />
           <button
             onClick={handleSend}
@@ -315,15 +393,17 @@ const ChatbotPage = ({ user }) => {
               opacity: (!input.trim() || isLoading) ? 0.5 : 1,
               cursor: (!input.trim() || isLoading) ? 'not-allowed' : 'pointer'
             }}
+            data-testid="chat-send-btn"
           >
             <Send size={22} />
           </button>
         </div>
 
-        <p className="body-small" style={{
+        <p style={{
           textAlign: 'center',
           color: 'var(--text-muted)',
           marginTop: '18px',
+          fontFamily: 'var(--font-heading)',
           fontSize: '13px'
         }}>
           💡 Box Bot creates custom prompts using advanced AI. Copy and use them with ChatGPT, Claude, or any AI tool!
