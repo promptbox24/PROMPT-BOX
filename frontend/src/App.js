@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
+import AuthPage from "./pages/AuthPage";
 import ChatbotPage from "./pages/ChatbotPage";
 import Header from "./components/Header";
 
@@ -23,7 +23,7 @@ function AppContent() {
       {showHeader && <Header user={user} onLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<AuthPage />} />
         <Route path="/dashboard" element={<HomePage />} />
         <Route path="/chatbot" element={<ChatbotPage user={user} />} />
       </Routes>
