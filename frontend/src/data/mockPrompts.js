@@ -261,10 +261,111 @@ export const categoryPrompts = {
     { id: 'sci15', title: 'Science Fair Project', prompt: 'Help me plan a science fair project about [TOPIC]. Include: question, hypothesis, procedure, expected results, and presentation tips.', description: 'Win the science fair' }
   ],
   // Add similar arrays for art, coding, math, reading, languages, health
-  art: [],
-  coding: [],
-  math: [],
-  reading: [],
-  languages: [],
-  health: []
+  art: [
+    { id: 'art1', title: 'Drawing Tutorial Generator', prompt: 'Create a step-by-step drawing tutorial for [SUBJECT]. Include: basic shapes to start, proportions, shading techniques, common mistakes, and tips for beginners.', description: 'Learn to draw anything step-by-step' },
+    { id: 'art2', title: 'Color Palette Creator', prompt: 'Suggest a color palette for [PROJECT/THEME]. Include: hex codes, color names, mood/emotion it conveys, and how to use each color effectively.', description: 'Perfect color combinations' },
+    { id: 'art3', title: 'Art Style Explorer', prompt: 'Explain [ART STYLE] in simple terms. Include: key characteristics, famous artists, techniques used, and how to create art in this style.', description: 'Understand different art movements' },
+    { id: 'art4', title: 'Composition Helper', prompt: 'Help me compose my artwork about [SUBJECT]. Suggest: focal point, rule of thirds, balance, leading lines, and background elements.', description: 'Create balanced compositions' },
+    { id: 'art5', title: 'Art Project Ideas', prompt: 'Generate 5 creative art project ideas about [THEME]. For each: materials needed, difficulty level, estimated time, and step-by-step outline.', description: 'Never run out of project ideas' },
+    { id: 'art6', title: 'Character Design Guide', prompt: 'Help me design a character with [TRAITS]. Include: body proportions, facial features, clothing style, pose suggestions, and expression ideas.', description: 'Design unique characters' },
+    { id: 'art7', title: 'Background Artist', prompt: 'Describe a detailed background for [SCENE]. Include: perspective, depth layers, lighting, atmospheric effects, and key elements to include.', description: 'Create immersive backgrounds' },
+    { id: 'art8', title: 'Shading Technique Guide', prompt: 'Teach me how to shade [OBJECT/FORM]. Explain: light source placement, shadow types, highlight placement, blending techniques, and common errors.', description: 'Master shading and depth' },
+    { id: 'art9', title: 'Art Critique Assistant', prompt: 'Critique my artwork: [DESCRIBE/UPLOAD]. Analyze: composition, color use, technique, strengths, areas to improve, and specific suggestions.', description: 'Get constructive feedback' },
+    { id: 'art10', title: 'Mixed Media Ideas', prompt: 'Suggest ways to combine [MEDIUM 1] with [MEDIUM 2]. Include: techniques, materials needed, layering order, and examples of effects you can achieve.', description: 'Experiment with mixed media' },
+    { id: 'art11', title: 'Portrait Tips', prompt: 'Give me tips for drawing/painting portraits. Cover: facial proportions, capturing likeness, skin tones, hair texture, and expression techniques.', description: 'Improve portrait skills' },
+    { id: 'art12', title: 'Art History Explorer', prompt: 'Tell me about [ARTIST/MOVEMENT]. Include: historical context, key works, techniques used, influence on art, and modern relevance.', description: 'Learn art history' },
+    { id: 'art13', title: 'Digital Art Guide', prompt: 'Explain how to create [TYPE] digital art. Include: software recommendations, brush settings, layer techniques, and workflow tips.', description: 'Master digital art tools' },
+    { id: 'art14', title: 'Perspective Drawing', prompt: 'Teach me [1-POINT/2-POINT/3-POINT] perspective. Use simple examples, explain vanishing points, horizon lines, and how to draw [OBJECT] in perspective.', description: 'Understand perspective drawing' },
+    { id: 'art15', title: 'Art Challenge Generator', prompt: 'Create a 7-day art challenge about [THEME]. For each day: specific prompt, skills to practice, difficulty progression, and optional variations.', description: 'Daily art practice challenges' }
+  ],
+  
+  coding: [
+    { id: 'code1', title: 'Code Explainer', prompt: 'Explain this code line-by-line: [PASTE CODE]. What does it do? How does each part work? What are the key concepts? Use simple analogies.', description: 'Understand any code' },
+    { id: 'code2', title: 'Bug Finder', prompt: 'Debug this code: [PASTE CODE]. Find the bug, explain why it\'s wrong, provide the fix, and explain how to prevent similar bugs.', description: 'Fix bugs fast' },
+    { id: 'code3', title: 'Algorithm Helper', prompt: 'Explain [ALGORITHM] in simple terms. Include: how it works, when to use it, time complexity, visual example, and code implementation in [LANGUAGE].', description: 'Master algorithms' },
+    { id: 'code4', title: 'Project Builder', prompt: 'Help me build a [PROJECT TYPE] using [LANGUAGE]. Break it down: features list, file structure, key functions, step-by-step implementation, and testing approach.', description: 'Build complete projects' },
+    { id: 'code5', title: 'Code Review', prompt: 'Review my code for [FEATURE]: [PASTE CODE]. Check: logic errors, best practices, performance, readability, security issues, and suggest improvements.', description: 'Get code feedback' },
+    { id: 'code6', title: 'Function Writer', prompt: 'Write a [LANGUAGE] function that [DESCRIBE FUNCTIONALITY]. Include: parameters, return value, error handling, comments, and usage example.', description: 'Generate working functions' },
+    { id: 'code7', title: 'Data Structure Picker', prompt: 'I need to [DESCRIBE TASK]. Which data structure should I use? Explain: why it\'s best, alternatives, time complexity, and example implementation.', description: 'Choose right data structures' },
+    { id: 'code8', title: 'API Integration Guide', prompt: 'Help me integrate [API NAME] into my [LANGUAGE] project. Include: setup, authentication, making requests, handling responses, and error cases.', description: 'Integrate APIs easily' },
+    { id: 'code9', title: 'Code Optimizer', prompt: 'Optimize this code: [PASTE CODE]. Improve: performance, memory usage, readability. Explain each optimization and measure the improvement.', description: 'Write efficient code' },
+    { id: 'code10', title: 'Testing Helper', prompt: 'Write unit tests for this function: [PASTE CODE]. Include: edge cases, happy path, error cases, and test descriptions. Use [TESTING FRAMEWORK].', description: 'Test your code properly' },
+    { id: 'code11', title: 'Regex Builder', prompt: 'Create a regex pattern to [DESCRIBE TASK]. Explain: each part of the pattern, test cases, and provide working code examples in [LANGUAGE].', description: 'Master regular expressions' },
+    { id: 'code12', title: 'Database Query Writer', prompt: 'Write a [SQL/NoSQL] query to [DESCRIBE TASK]. Optimize it for performance, explain the logic, and show example output.', description: 'Write efficient queries' },
+    { id: 'code13', title: 'Code Converter', prompt: 'Convert this code from [LANGUAGE 1] to [LANGUAGE 2]: [PASTE CODE]. Maintain functionality, use best practices of target language, and add comments.', description: 'Translate between languages' },
+    { id: 'code14', title: 'Git Helper', prompt: 'Help me with this Git situation: [DESCRIBE ISSUE]. Provide: exact commands to run, what each does, how to avoid this issue, and alternative approaches.', description: 'Master version control' },
+    { id: 'code15', title: 'Learning Path Creator', prompt: 'Create a learning roadmap to become a [DEVELOPER TYPE]. Include: topics to learn, order to learn them, project ideas, resources, and estimated timeline.', description: 'Plan your coding journey' }
+  ],
+  
+  math: [
+    { id: 'math1', title: 'Step-by-Step Solver', prompt: 'Solve this math problem step-by-step: [PROBLEM]. Explain each step, show all work, highlight important formulas, and verify the answer.', description: 'Solve any math problem' },
+    { id: 'math2', title: 'Concept Explainer', prompt: 'Explain [MATH CONCEPT] using real-world examples. Make it visual, use analogies, show why it matters, and include practice problems.', description: 'Understand math concepts' },
+    { id: 'math3', title: 'Word Problem Translator', prompt: 'Help me solve this word problem: [PASTE PROBLEM]. Identify: what we know, what we need to find, equations to use, and step-by-step solution.', description: 'Tackle word problems' },
+    { id: 'math4', title: 'Formula Explainer', prompt: 'Explain this formula: [FORMULA]. What does each variable represent? When do we use it? Provide 3 example problems with solutions.', description: 'Master formulas' },
+    { id: 'math5', title: 'Practice Problem Generator', prompt: 'Create 10 practice problems about [TOPIC]. Mix difficulty levels: easy, medium, hard. Include an answer key with explanations.', description: 'Practice makes perfect' },
+    { id: 'math6', title: 'Math Mistake Finder', prompt: 'Find the mistake in my work: [PASTE SOLUTION]. Explain: what went wrong, why it\'s wrong, how to fix it, and how to avoid this error.', description: 'Learn from mistakes' },
+    { id: 'math7', title: 'Geometry Helper', prompt: 'Help me with this geometry problem: [DESCRIBE/DIAGRAM]. Include: labeled diagram, relevant theorems, step-by-step solution, and why each step works.', description: 'Master geometry' },
+    { id: 'math8', title: 'Algebra Simplifier', prompt: 'Simplify this expression: [EXPRESSION]. Show each step, explain what rules you\'re using, and check the final answer by substituting values.', description: 'Simplify complex expressions' },
+    { id: 'math9', title: 'Graph Interpreter', prompt: 'Explain this graph/function: [DESCRIBE/EQUATION]. Include: key features, intercepts, domain/range, asymptotes, and what it represents.', description: 'Understand graphs' },
+    { id: 'math10', title: 'Math in Real Life', prompt: 'Show me how [MATH CONCEPT] is used in real life. Give 3 practical examples, explain the math involved, and why it\'s important.', description: 'See math applications' },
+    { id: 'math11', title: 'Fraction/Decimal Converter', prompt: 'Help me convert between fractions, decimals, and percentages. Explain the process, show multiple methods, and give me tricks to remember.', description: 'Master conversions' },
+    { id: 'math12', title: 'Trigonometry Guide', prompt: 'Explain [TRIG CONCEPT/PROBLEM]. Include: unit circle reference, relevant identities, step-by-step solution, and when to use this in real problems.', description: 'Conquer trigonometry' },
+    { id: 'math13', title: 'Statistics Helper', prompt: 'Help me analyze this data: [DATA SET]. Calculate: mean, median, mode, range, standard deviation. Explain what each tells us about the data.', description: 'Analyze data' },
+    { id: 'math14', title: 'Proof Writer', prompt: 'Help me write a proof for [STATEMENT]. Guide me through: what to prove, which approach to use, step-by-step logic, and how to write it formally.', description: 'Write mathematical proofs' },
+    { id: 'math15', title: 'Math Exam Prep', prompt: 'Create a study guide for [MATH TOPIC]. Include: key formulas, common problems, tricks to remember, practice questions, and exam tips.', description: 'Ace your math exams' }
+  ],
+  
+  reading: [
+    { id: 'read1', title: 'Book Summarizer', prompt: 'Summarize "[BOOK TITLE]" by [AUTHOR]. Include: plot overview, main characters, themes, key quotes, and why it\'s worth reading.', description: 'Quick book summaries' },
+    { id: 'read2', title: 'Character Analysis', prompt: 'Analyze [CHARACTER] from "[BOOK]". Examine: personality traits, motivations, character arc, relationships, and significance to the story.', description: 'Understand characters deeply' },
+    { id: 'read3', title: 'Theme Explorer', prompt: 'Explain the main themes in "[BOOK/STORY]". For each theme: examples from the text, author\'s message, relevance today, and personal reflection questions.', description: 'Identify and analyze themes' },
+    { id: 'read4', title: 'Reading Comprehension', prompt: 'Help me understand this passage: [PASTE TEXT]. Explain: main idea, literary devices, vocabulary, author\'s purpose, and what makes it effective.', description: 'Improve comprehension' },
+    { id: 'read5', title: 'Quote Analyzer', prompt: 'Analyze this quote from "[BOOK]": [QUOTE]. Explain: literal meaning, deeper significance, context in story, literary techniques, and why it matters.', description: 'Understand important quotes' },
+    { id: 'read6', title: 'Comparison Essay Helper', prompt: 'Compare [BOOK/CHARACTER 1] and [BOOK/CHARACTER 2]. Analyze: similarities, differences, themes, and what we learn from comparing them.', description: 'Write comparison essays' },
+    { id: 'read7', title: 'Author\'s Craft', prompt: 'Analyze how [AUTHOR] uses [LITERARY DEVICE] in "[BOOK]". Find examples, explain their effect, and discuss why the author chose this technique.', description: 'Understand writing techniques' },
+    { id: 'read8', title: 'Discussion Questions', prompt: 'Create 10 thought-provoking discussion questions about "[BOOK]". Mix: comprehension, analysis, personal reflection, and critical thinking questions.', description: 'Lead book discussions' },
+    { id: 'read9', title: 'Plot Analysis', prompt: 'Analyze the plot structure of "[BOOK]". Identify: exposition, rising action, climax, falling action, resolution. Explain how tension builds.', description: 'Understand story structure' },
+    { id: 'read10', title: 'Symbolism Decoder', prompt: 'Explain the symbolism of [SYMBOL/OBJECT] in "[BOOK]". What does it represent? How does it connect to themes? Find examples from the text.', description: 'Interpret symbols' },
+    { id: 'read11', title: 'Historical Context', prompt: 'Explain the historical context of "[BOOK]". Cover: time period, social issues, author\'s background, and how history influences the story.', description: 'Connect books to history' },
+    { id: 'read12', title: 'Reading List Generator', prompt: 'Recommend 10 books like "[BOOK]". For each: title, author, why it\'s similar, and what makes it unique. Match my reading level: [LEVEL].', description: 'Find your next great read' },
+    { id: 'read13', title: 'Annotation Guide', prompt: 'Create an annotation guide for [CHAPTER/SECTION] of "[BOOK]". Note: key passages, literary devices, questions to consider, and connections.', description: 'Annotate effectively' },
+    { id: 'read14', title: 'Essay Thesis Creator', prompt: 'Help me write a thesis statement about [TOPIC] in "[BOOK]". Make it: arguable, specific, and supported by evidence. Provide 3 options.', description: 'Write strong thesis statements' },
+    { id: 'read15', title: 'Speed Reading Tips', prompt: 'Teach me techniques to read faster while retaining information. Include: exercises to practice, how to avoid subvocalization, and comprehension strategies.', description: 'Read faster and smarter' }
+  ],
+  
+  languages: [
+    { id: 'lang1', title: 'Conversation Practice', prompt: 'Help me practice [LANGUAGE] conversation about [TOPIC]. Start a dialogue, correct my mistakes, suggest natural phrases, and explain cultural context.', description: 'Practice speaking naturally' },
+    { id: 'lang2', title: 'Grammar Explainer', prompt: 'Explain [GRAMMAR RULE] in [LANGUAGE]. Use simple terms, provide examples, compare to English grammar, and give practice sentences.', description: 'Master grammar rules' },
+    { id: 'lang3', title: 'Vocabulary Builder', prompt: 'Teach me 20 essential [LANGUAGE] words about [TOPIC]. For each: word, pronunciation, example sentence, common phrases, and memory tricks.', description: 'Expand vocabulary' },
+    { id: 'lang4', title: 'Translation Helper', prompt: 'Translate this from [LANGUAGE 1] to [LANGUAGE 2]: [TEXT]. Provide: literal translation, natural translation, cultural notes, and alternative expressions.', description: 'Translate accurately' },
+    { id: 'lang5', title: 'Pronunciation Guide', prompt: 'Help me pronounce [WORD/PHRASE] in [LANGUAGE]. Explain: sound breakdown, similar English sounds, common mistakes, and tips to sound native.', description: 'Perfect pronunciation' },
+    { id: 'lang6', title: 'Writing Corrector', prompt: 'Correct my [LANGUAGE] writing: [PASTE TEXT]. Fix: grammar, vocabulary, sentence structure. Explain each correction and suggest more natural alternatives.', description: 'Improve writing skills' },
+    { id: 'lang7', title: 'Idiom Explainer', prompt: 'Explain this [LANGUAGE] idiom: [IDIOM]. What does it mean literally? What does it mean actually? When do people use it? Give usage examples.', description: 'Understand idioms' },
+    { id: 'lang8', title: 'Culture Lesson', prompt: 'Teach me about [CULTURAL ASPECT] in [LANGUAGE/COUNTRY]. Include: customs, etiquette, taboos, useful phrases, and how to show respect.', description: 'Learn cultural context' },
+    { id: 'lang9', title: 'Reading Comprehension', prompt: 'Help me read this [LANGUAGE] text: [PASTE TEXT]. Translate difficult words, explain grammar structures, summarize meaning, and answer questions.', description: 'Read in target language' },
+    { id: 'lang10', title: 'Conjugation Helper', prompt: 'Show me how to conjugate [VERB] in [LANGUAGE] across all tenses. Include: present, past, future, with example sentences for each.', description: 'Master verb conjugations' },
+    { id: 'lang11', title: 'Language Exchange Topics', prompt: 'Suggest 10 conversation topics for [LANGUAGE] practice at [SKILL LEVEL]. For each: key vocabulary, questions to ask, and cultural notes.', description: 'Practice with purpose' },
+    { id: 'lang12', title: 'Study Plan Creator', prompt: 'Create a 30-day study plan to improve my [LANGUAGE] from [CURRENT LEVEL] to [GOAL LEVEL]. Include: daily tasks, resources, practice activities, and milestones.', description: 'Structured learning path' },
+    { id: 'lang13', title: 'Listening Practice', prompt: 'Recommend [LANGUAGE] listening resources for [SKILL LEVEL]. Include: podcasts, videos, music, difficulty rating, and what I\'ll learn from each.', description: 'Improve listening skills' },
+    { id: 'lang14', title: 'Common Mistakes Fixer', prompt: 'What are common mistakes [ENGLISH] speakers make in [LANGUAGE]? Explain: the error, why it happens, correct usage, and how to remember.', description: 'Avoid common errors' },
+    { id: 'lang15', title: 'Formal vs Casual', prompt: 'Explain formal vs casual speech in [LANGUAGE]. Teach me: when to use each, key differences, examples, and how to switch between them appropriately.', description: 'Use appropriate register' }
+  ],
+  
+  health: [
+    { id: 'health1', title: 'Workout Plan Creator', prompt: 'Create a [DURATION] workout plan for [FITNESS GOAL]. Include: exercises, sets/reps, rest days, progression plan, and form tips for beginners.', description: 'Get personalized workout plans' },
+    { id: 'health2', title: 'Nutrition Guide', prompt: 'Create a balanced meal plan for [GOAL: lose weight/gain muscle/maintain]. Include: meals, snacks, portions, calories, and easy recipes.', description: 'Eat healthy and smart' },
+    { id: 'health3', title: 'Exercise Form Checker', prompt: 'Explain proper form for [EXERCISE]. Include: starting position, movement steps, common mistakes, muscles worked, and safety tips.', description: 'Perfect your form' },
+    { id: 'health4', title: 'Healthy Habit Builder', prompt: 'Help me build [HEALTHY HABIT]. Create: 30-day challenge, daily tasks, progress tracking, motivation tips, and how to maintain long-term.', description: 'Build lasting habits' },
+    { id: 'health5', title: 'Stress Relief Guide', prompt: 'Suggest stress management techniques for [SITUATION]. Include: immediate relief methods, long-term strategies, breathing exercises, and lifestyle changes.', description: 'Manage stress effectively' },
+    { id: 'health6', title: 'Sleep Optimizer', prompt: 'Help me improve my sleep quality. Analyze my routine: [DESCRIBE]. Suggest: bedtime habits, environment changes, and techniques to fall asleep faster.', description: 'Sleep better tonight' },
+    { id: 'health7', title: 'Injury Prevention', prompt: 'How do I prevent [INJURY TYPE] when [ACTIVITY]? Explain: warning signs, warm-up exercises, strengthening exercises, and recovery tips.', description: 'Stay injury-free' },
+    { id: 'health8', title: 'Fitness Milestone Planner', prompt: 'Help me reach [FITNESS GOAL] in [TIMEFRAME]. Break it down: weekly targets, exercises, nutrition needs, rest days, and progress checkpoints.', description: 'Achieve fitness goals' },
+    { id: 'health9', title: 'Home Workout Guide', prompt: 'Create a home workout using [EQUIPMENT/NO EQUIPMENT]. Target [MUSCLE GROUPS]. Include: warm-up, main workout, cool-down, and modifications.', description: 'Workout anywhere' },
+    { id: 'health10', title: 'Hydration Calculator', prompt: 'Calculate my daily water needs based on: weight [X], activity level [Y], climate [Z]. Explain: why hydration matters, timing tips, and tracking methods.', description: 'Stay properly hydrated' },
+    { id: 'health11', title: 'Posture Corrector', prompt: 'Help me fix my posture for [ACTIVITY: sitting/standing/sleeping]. Identify problems, suggest exercises, ergonomic tips, and daily reminders.', description: 'Improve posture' },
+    { id: 'health12', title: 'Energy Booster', prompt: 'I feel tired during [TIME OF DAY]. Suggest: natural energy boosters, foods to eat/avoid, exercise timing, and lifestyle changes.', description: 'Increase energy naturally' },
+    { id: 'health13', title: 'Mental Health Check', prompt: 'Guide me through a mental wellness check. Ask questions about: mood, stress, sleep, relationships. Suggest self-care activities and when to seek help.', description: 'Care for mental health' },
+    { id: 'health14', title: 'Flexibility Routine', prompt: 'Create a stretching routine for [GOAL/BODY PART]. Include: best stretches, hold times, breathing techniques, and progression plan.', description: 'Improve flexibility' },
+    { id: 'health15', title: 'Healthy Lifestyle Coach', prompt: 'Assess my lifestyle: [DESCRIBE HABITS]. Identify: what I\'m doing well, areas to improve, realistic changes, and 90-day transformation plan.', description: 'Transform your lifestyle' }
+  ]
 };
