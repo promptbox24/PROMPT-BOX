@@ -1,231 +1,277 @@
-# PromptBox - AI Prompt Library PRD
+# Prompt Box - Kid-Friendly AI Prompt Library PRD
 
 ## Original Problem Statement
-Create a modern, premium, 3D-style website for an "AI Prompt Library" startup with:
-- Dark mode futuristic AI aesthetic
-- Browse and copy AI prompts across 5 categories
-- Backend authorization system (Emergent Auth)
-- AI chatbot "Box Bot" for custom prompt generation (OpenAI GPT-4o)
-- Glassmorphism, 3D effects, smooth interactions
+Create a modern, premium, kid-friendly website for an "AI Prompt Library" with:
+- Dark theme but NOT pure black (dark navy/purple)
+- More interactive and playful design
+- 10 categories instead of 5
+- Box Bot AI section below categories
+- Enhanced AI prompt generation
+- Combined login/signup page
+- Company name: "Prompt Box" (with space)
+- Logo integration
 
-## User Personas
-- **Students**: Need proven prompts for essays, research, studying
-- **Content Creators**: Need social media hooks, content ideas
-- **Business Professionals**: Need email campaigns, marketing copy
-- **Developers**: Need debugging help, code explanations
-- **General Users**: Need productivity and life optimization prompts
+## Design Changes (Phase 2 Update)
 
-## Core Architecture
+### ✅ Kid-Friendly Design Complete
+- **Colors**: Dark navy (#1a1a2e) background, purple gradient accent (#8a63ff)
+- **Rounded Corners**: 16-24px border-radius for all interactive elements
+- **Playful Elements**: Emojis, bouncing animations, colorful gradients
+- **Typography**: Friendly, bold fonts with emoji accents
+- **Interactive**: Hover effects with scale and lift animations
 
-### Tech Stack
+### ✅ Expanded Categories (10 Total)
+1. Homework Helper 📚
+2. Creative Writing ✍️
+3. Gaming & Fun 🎮
+4. Science Explorer 🔬
+5. Art & Drawing 🎨
+6. Coding Adventures 💻
+7. Math Magic 🔢
+8. Reading & Books 📖
+9. Learn Languages 🌍
+10. Health & Fitness 💪
+
+### ✅ Enhanced Box Bot AI
+- **Smarter Prompts**: Context-aware prompt generation based on keywords
+- **6 Quick Start Options**: Homework, Essay, Creative, Science, Math, Coding
+- **Detailed Responses**: Step-by-step AI prompts with customization tips
+- **Kid-Friendly UI**: Large icons, colorful buttons, clear instructions
+- **Better UX**: Quick prompts buttons, enhanced placeholder text
+
+### ✅ Combined Auth Page
+- Tab switcher (Sign In / Sign Up)
+- Single Google OAuth flow for both
+- Benefits showcase for signup
+- Decorative gradient backgrounds
+- Mobile responsive
+
+### ✅ Page Structure Changes
+1. Hero section (top)
+2. Categories section (below hero)
+3. **Box Bot AI section** (below categories) ← New placement
+4. Featured Prompts
+5. CTA section
+6. Footer
+
+## Tech Stack
 - **Frontend**: React, TailwindCSS, shadcn/ui components
-- **Backend**: FastAPI, MongoDB
-- **Auth**: Emergent Managed Authentication (Google OAuth)
-- **AI**: OpenAI GPT-4o via Emergent LLM key
+- **Backend**: FastAPI, MongoDB (to be implemented)
+- **Auth**: Emergent Managed Authentication
+- **AI**: OpenAI GPT-4o via Emergent LLM key (to be implemented)
 
-### Design System (Green Dark Theme)
-- **Colors**: Black background (#000000), Cyan-green accent (#00FFD1)
-- **Typography**: Inter font, large headlines (66px), high contrast
-- **Components**: Sharp corners (0px border-radius), glassmorphism
-- **Interactions**: Hover lifts, smooth transitions (0.4s ease-in-out)
+## What's Been Implemented
 
-## What's Been Implemented (Phase 1 - Frontend with Mock Data)
+### Phase 1 (Initial Build)
+✅ Basic dark theme with sharp corners
+✅ 5 categories
+✅ Hero section with floating cards
+✅ Featured prompts with copy functionality
+✅ Basic chatbot UI
+
+### Phase 2 (Kid-Friendly Redesign - Complete)
 **Date**: December 2025
 
-### ✅ Completed Features
+✅ **Design System Overhaul**
+   - Dark navy/purple theme (#1a1a2e, #8a63ff)
+   - Rounded corners (16-24px)
+   - Playful animations (bounce, float, scale)
+   - Colorful gradients for categories
+   - Interactive hover effects
 
-1. **Homepage**
-   - Hero section with floating prompt cards (CSS 3D effects)
-   - 5 category cards (Student, Creator, Business, Productivity, Coding)
-   - 6 featured prompt cards with copy functionality
-   - Features section (6 benefits)
-   - "How It Works" 3-step guide
-   - CTA section
-   - Footer with links
+✅ **10 Categories with Gradients**
+   - Each category has unique gradient background
+   - Emojis for visual appeal
+   - Rounded cards with hover effects
+   - Decorative background patterns
 
-2. **Chatbot Page (Box Bot UI)**
-   - Chat interface with message history
-   - User/assistant message bubbles
-   - Input textarea with send button
-   - Mock responses (not connected to API yet)
-   - Loading state with spinner
+✅ **Box Bot AI Enhancement**
+   - Context-aware prompt generation
+   - 6 quick start buttons
+   - Enhanced response templates:
+     * Homework helper prompts
+     * Essay writing prompts
+     * Creative writing prompts
+     * Science explorer prompts
+     * Math helper prompts
+     * Coding helper prompts
+   - Step-by-step instructions in responses
+   - Pro tips included
+   - Kid-friendly explanations
 
-3. **Login Page**
-   - Google OAuth integration UI
-   - Redirect setup for Emergent Auth
+✅ **Combined Auth Page**
+   - Sign In / Sign Up tabs
+   - Google OAuth integration
+   - Benefits showcase
+   - Playful design with decorative elements
+   - Mobile responsive
 
-4. **Components**
-   - Header with navigation (Prompts, Box Bot, Sign In)
-   - PromptCard component with copy button
-   - CategoryCard with hover effects
+✅ **Logo Integration**
+   - Brand logo in header
+   - Gradient text for "Prompt Box"
+   - Consistent branding
 
-5. **Mock Data**
-   - 5 prompt categories
-   - 6 sample prompts across categories
-   - Features and benefits list
+✅ **Improved Homepage Structure**
+   - Reordered sections (Categories → Box Bot → Prompts)
+   - Playful copy and emojis throughout
+   - Gradient text for headings
+   - Decorative background patterns
 
-### Design Quality
-- ✅ Dark theme (#000000 background, #00FFD1 accent)
-- ✅ Sharp corners (0px border-radius)
-- ✅ Proper contrast (white text on dark backgrounds)
-- ✅ Hover effects with transforms
-- ✅ Responsive grid layouts
-- ✅ Clean typography hierarchy
+## Enhanced Box Bot Prompt Templates
+
+### Homework Helper
+```
+"I need help with [SUBJECT] homework. I'm in [GRADE] grade. Please:
+1. Explain the concept in simple terms
+2. Show me step-by-step examples
+3. Give me practice questions
+4. Check my understanding
+
+Make it fun and easy to understand! Use examples from everyday life."
+```
+
+### Essay Writer
+```
+"Help me write an essay about [TOPIC]. I'm in [GRADE] grade. Please:
+1. Create an interesting introduction with a hook
+2. Suggest 3 main points with supporting details
+3. Help me write a strong conclusion
+4. Use simple, clear language
+5. Make it [LENGTH] words
+
+Include fun facts and examples to make it engaging!"
+```
+
+### Creative Writing
+```
+"I want to write a creative [STORY TYPE] about [TOPIC]. Help me by:
+1. Creating interesting characters
+2. Developing an exciting plot
+3. Suggesting cool settings
+4. Adding descriptive words
+5. Making it engaging for [AGE] year olds
+
+Make it fun, imaginative, and easy to follow!"
+```
+
+### Science Explorer
+```
+"Explain [SCIENCE TOPIC] to me like I'm [AGE] years old. Please:
+1. Use simple, everyday examples
+2. Show me cool experiments I can try
+3. Explain why it's important
+4. Add fun facts
+5. Use analogies I can understand
+
+Make science exciting and easy to understand!"
+```
+
+### Math Helper
+```
+"I'm learning about [MATH TOPIC] in [GRADE] grade. Please:
+1. Explain it using real-life examples
+2. Show me the steps clearly
+3. Give me practice problems (easy to hard)
+4. Teach me tricks to remember
+5. Make it fun and visual
+
+Help me understand WHY we use this in real life!"
+```
+
+### Coding Helper
+```
+"I want to learn [CODING CONCEPT] using [LANGUAGE]. I'm a [SKILL LEVEL] coder. Please:
+1. Explain it in simple terms
+2. Show me a fun example project
+3. Break down the code step-by-step
+4. Point out common mistakes
+5. Give me challenges to practice
+
+Make coding fun and easy to understand!"
+```
 
 ## Prioritized Backlog
 
-### P0 - Phase 2: Backend Development & Integration
+### P0 - Phase 3: Backend Development
 
 #### Authentication System
 - [ ] Implement Emergent Auth backend endpoints
-  - `/api/auth/session` - Exchange session_id for session_token
-  - `/api/auth/me` - Get current user
-  - `/api/auth/logout` - Clear session
-- [ ] Create MongoDB collections:
-  - `users` (user_id, email, name, picture, created_at)
-  - `user_sessions` (user_id, session_token, expires_at, created_at)
-- [ ] Implement AuthCallback component for OAuth redirect handling
-- [ ] Protected routes for chatbot (require login)
+- [ ] Create MongoDB collections for users and sessions
+- [ ] Implement AuthCallback component
+- [ ] Protected routes for chatbot
 
 #### Box Bot AI Integration
 - [ ] Install emergentintegrations library
 - [ ] Add EMERGENT_LLM_KEY to backend .env
-- [ ] Create `/api/chat/message` endpoint
-  - Accept user message and session_id
-  - Call OpenAI GPT-4o via LlmChat
-  - System prompt: "You are Box Bot, an expert AI prompt generator..."
-  - Return generated custom prompt
-- [ ] Create MongoDB collection:
-  - `chat_messages` (user_id, session_id, role, content, created_at)
-- [ ] Update ChatbotPage to call real API
-- [ ] Implement streaming responses (optional enhancement)
+- [ ] Create `/api/chat/message` endpoint with enhanced prompt system
+- [ ] System prompt optimized for kid-friendly responses
+- [ ] Store chat history in MongoDB
+- [ ] Connect frontend to real API
 
 #### Prompt Management
-- [ ] Create MongoDB collection:
-  - `prompts` (prompt_id, title, category, description, prompt_text, example, tags, created_at)
-- [ ] Seed database with mock prompt data
-- [ ] Create API endpoints:
-  - `GET /api/prompts` - Get all prompts
-  - `GET /api/prompts/:id` - Get single prompt
-  - `GET /api/prompts/category/:category` - Filter by category
-- [ ] Replace frontend mock data with API calls
+- [ ] Create MongoDB prompts collection
+- [ ] Seed with 50+ prompts across 10 categories
+- [ ] API endpoints for browsing/filtering prompts
+- [ ] Replace frontend mock data
 
 ### P1 - User Features
 
-#### Favorites System
-- [ ] Create MongoDB collection:
-  - `user_favorites` (user_id, prompt_id, created_at)
-- [ ] Add favorite button to PromptCard
-- [ ] Create endpoints:
-  - `POST /api/favorites` - Add favorite
-  - `DELETE /api/favorites/:prompt_id` - Remove favorite
-  - `GET /api/favorites` - Get user's favorites
-- [ ] Create "My Favorites" page
-
-#### Save Custom Prompts
-- [ ] Create MongoDB collection:
-  - `user_prompts` (user_id, title, prompt_text, created_by_bot, created_at)
-- [ ] Add "Save" button in chatbot after generation
-- [ ] Create endpoints:
-  - `POST /api/user-prompts` - Save custom prompt
-  - `GET /api/user-prompts` - Get user's saved prompts
-  - `DELETE /api/user-prompts/:id` - Delete saved prompt
-- [ ] Create "My Prompts" page
-
-#### Search & Filter
-- [ ] Add search bar in header
-- [ ] Implement frontend search filtering
-- [ ] Add category filter dropdown
-- [ ] Add tag-based filtering
+- [ ] Favorites system
+- [ ] Save custom Box Bot prompts
+- [ ] Search & filter prompts
+- [ ] User profile page
+- [ ] Prompt usage analytics
 
 ### P2 - Enhancement Features
 
-#### Advanced Prompt Features
-- [ ] Prompt rating system (upvote/downvote)
-- [ ] Usage counter (track how many times copied)
-- [ ] "Recently Used" prompts section
-- [ ] Prompt templates with placeholders
-
-#### Box Bot Enhancements
-- [ ] Multi-turn conversation with context
-- [ ] Regenerate prompt option
-- [ ] Export chat history
-- [ ] Prompt refinement (iterate on generated prompts)
-
-#### Admin Features
-- [ ] Admin dashboard for prompt management
-- [ ] Add/edit/delete prompts via UI
-- [ ] User analytics (most popular prompts, categories)
-- [ ] Content moderation for user-generated prompts
-
-#### UI Enhancements
-- [ ] Add Spline 3D animation to hero section (optional)
+- [ ] Prompt rating system
+- [ ] Social sharing
+- [ ] Spline 3D animation in hero
 - [ ] Dark/light mode toggle
-- [ ] Keyboard shortcuts (Cmd+K for search)
-- [ ] Prompt preview modal
-- [ ] Copy success toast notifications
+- [ ] Keyboard shortcuts
+- [ ] Copy success animations
+- [ ] Achievement badges for kids
 
 ## Next Tasks (Immediate)
-1. ✅ Complete frontend with mock data
-2. ✅ Verify design matches requirements (screenshots)
-3. ✅ Create PRD.md with API contracts
-4. Build backend authentication system
-5. Integrate OpenAI GPT-4o for Box Bot
-6. Connect frontend to backend APIs
-7. Test end-to-end with testing agent
+1. ✅ Complete kid-friendly frontend redesign
+2. ✅ Expand to 10 categories
+3. ✅ Enhance Box Bot AI prompting
+4. ✅ Create combined auth page
+5. ✅ Add logo and branding
+6. Build backend authentication
+7. Integrate real OpenAI GPT-4o API
+8. Test end-to-end with testing agent
+
+## Design Quality Checklist
+✅ Dark navy theme (not pure black)
+✅ Rounded corners (16-24px)
+✅ Playful animations
+✅ Colorful gradients
+✅ Kid-friendly emojis
+✅ Interactive hover effects
+✅ Clear, friendly copy
+✅ Mobile responsive
+✅ Logo integration
+✅ Consistent branding
 
 ## API Contracts (To Be Implemented)
+Same as before, plus:
 
-### Authentication
-```
-POST /api/auth/session
-Headers: X-Session-ID: <session_id>
-Response: { user_id, email, name, picture, session_token }
-
-GET /api/auth/me
-Headers: Cookie: session_token=<token>
-Response: { user_id, email, name, picture }
-
-POST /api/auth/logout
-Headers: Cookie: session_token=<token>
-Response: { message: "Logged out" }
-```
-
-### Prompts
-```
-GET /api/prompts
-Response: [{ prompt_id, title, category, description, prompt_text, example, tags }]
-
-GET /api/prompts/category/:category
-Response: [{ prompt_id, title, description, ... }]
-```
-
-### Chat
+### Enhanced Chat Endpoint
 ```
 POST /api/chat/message
 Body: { message: string, session_id: string }
-Headers: Cookie: session_token=<token>
-Response: { reply: string, session_id: string }
-
-GET /api/chat/history/:session_id
-Headers: Cookie: session_token=<token>
-Response: [{ role: 'user'|'assistant', content: string, created_at: timestamp }]
-```
-
-### Favorites
-```
-POST /api/favorites
-Body: { prompt_id: string }
-Headers: Cookie: session_token=<token>
-Response: { success: true }
-
-GET /api/favorites
-Headers: Cookie: session_token=<token>
-Response: [{ prompt_id, title, category, ... }]
+Response: {
+  reply: string (enhanced prompt with context awareness),
+  session_id: string,
+  prompt_type: 'homework' | 'essay' | 'creative' | 'science' | 'math' | 'coding'
+}
 ```
 
 ## Notes
-- Using mock data in frontend for Phase 1 (quick "aha" moment)
-- Auth and AI chatbot integrations planned for Phase 2
-- Design follows green-dark-theme guidelines strictly
-- All mock data located in `/app/frontend/src/data/mockPrompts.js`
+- Frontend completely redesigned for kid-friendly experience
+- Box Bot AI now generates context-aware, educational prompts
+- 10 categories with unique gradients and emojis
+- Combined auth page with tab switcher
+- All elements rounded and playful
+- Ready for backend integration
