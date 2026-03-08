@@ -2,39 +2,74 @@
 
 export const promptCategories = [
   {
-    id: 'student',
-    title: 'Student Prompts',
-    description: 'Study smarter with AI-powered learning prompts',
+    id: 'homework',
+    title: 'Homework Helper',
+    description: 'Get help with your homework and learn faster',
     icon: '📚',
-    color: 'rgba(0, 255, 209, 0.1)'
+    color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
   },
   {
-    id: 'creator',
-    title: 'Creator Prompts',
-    description: 'Content creation made effortless',
+    id: 'creative',
+    title: 'Creative Writing',
+    description: 'Write amazing stories and adventures',
+    icon: '✍️',
+    color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+  },
+  {
+    id: 'gaming',
+    title: 'Gaming & Fun',
+    description: 'Create game ideas and fun activities',
+    icon: '🎮',
+    color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+  },
+  {
+    id: 'science',
+    title: 'Science Explorer',
+    description: 'Discover cool science facts and experiments',
+    icon: '🔬',
+    color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+  },
+  {
+    id: 'art',
+    title: 'Art & Drawing',
+    description: 'Get creative ideas for your art projects',
     icon: '🎨',
-    color: 'rgba(111, 210, 192, 0.1)'
-  },
-  {
-    id: 'business',
-    title: 'Business & Marketing',
-    description: 'Scale your business with proven prompts',
-    icon: '💼',
-    color: 'rgba(0, 255, 209, 0.15)'
-  },
-  {
-    id: 'productivity',
-    title: 'Productivity & Life',
-    description: 'Optimize your daily workflows',
-    icon: '⚡',
-    color: 'rgba(111, 210, 192, 0.15)'
+    color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
   },
   {
     id: 'coding',
-    title: 'Coding & Tech',
-    description: 'Debug, build, and deploy faster',
+    title: 'Coding Adventures',
+    description: 'Learn to code with fun projects',
     icon: '💻',
-    color: 'rgba(0, 255, 209, 0.2)'
+    color: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)'
+  },
+  {
+    id: 'math',
+    title: 'Math Magic',
+    description: 'Make math fun and easy to understand',
+    icon: '🔢',
+    color: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+  },
+  {
+    id: 'reading',
+    title: 'Reading & Books',
+    description: 'Find book summaries and reading tips',
+    icon: '📖',
+    color: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+  },
+  {
+    id: 'languages',
+    title: 'Learn Languages',
+    description: 'Practice new languages with AI help',
+    icon: '🌍',
+    color: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+  },
+  {
+    id: 'health',
+    title: 'Health & Fitness',
+    description: 'Stay healthy and active with tips',
+    icon: '💪',
+    color: 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)'
   }
 ];
 

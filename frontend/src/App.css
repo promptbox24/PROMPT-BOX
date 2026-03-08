@@ -1,23 +1,25 @@
-/* Dark Theme Variables */
+/* Kid-Friendly Dark Theme Variables */
 :root {
-  /* Backgrounds - Dark Theme Foundation */
-  --bg-primary: #000000;
-  --bg-secondary: #121212;
+  /* Backgrounds - Dark Navy/Purple Theme */
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #252547;
   --bg-overlay: rgba(255, 255, 255, 0.1);
   
-  /* Text - High Contrast for Dark Theme */
+  /* Text - High Contrast */
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.85);
-  --text-muted: #4D4D4D;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: #9ca3af;
   
-  /* Borders - Subtle Dark Theme */
-  --border-subtle: rgba(255, 255, 255, 0.25);
-  --border-medium: rgba(255, 255, 255, 0.4);
+  /* Borders - Playful */
+  --border-subtle: rgba(138, 99, 255, 0.3);
+  --border-medium: rgba(138, 99, 255, 0.5);
   
-  /* Brand Colors */
-  --brand-primary: #00FFD1;
-  --brand-hover: rgba(0, 255, 209, 0.1);
-  --brand-active: #6FD2C0;
+  /* Brand Colors - Vibrant & Playful */
+  --brand-primary: #8a63ff;
+  --brand-secondary: #4facfe;
+  --brand-hover: rgba(138, 99, 255, 0.15);
+  --brand-active: #a78bfa;
+  --brand-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 * {
@@ -111,67 +113,66 @@ body {
   color: var(--text-secondary);
 }
 
-/* Buttons */
+/* Buttons - Kid-Friendly Rounded */
 .btn-primary {
-  background: var(--brand-primary);
-  color: #000000;
+  background: var(--brand-gradient);
+  color: #FFFFFF;
   border: none;
-  border-radius: 0px;
-  padding: 14px 24px;
+  border-radius: 16px;
+  padding: 14px 28px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 56px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
   line-height: 1.2;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 15px rgba(138, 99, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--brand-hover);
-  color: var(--brand-primary);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(138, 99, 255, 0.5);
 }
 
 .btn-primary:active {
-  background: var(--brand-active);
-  transform: scale(0.98);
+  transform: translateY(-1px) scale(0.98);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(138, 99, 255, 0.15);
   color: #FFFFFF;
-  border: none;
-  border-radius: 0px;
-  padding: 14px 24px;
+  border: 2px solid var(--brand-primary);
+  border-radius: 16px;
+  padding: 14px 28px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 56px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
   line-height: 1.2;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
 }
 
 .btn-secondary:hover {
-  background: #FFFFFF;
-  color: #000000;
-  transform: translateY(-2px);
+  background: var(--brand-primary);
+  border-color: var(--brand-active);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 4px 20px rgba(138, 99, 255, 0.4);
 }
 
 .btn-secondary:active {
-  background: #F0F0F0;
-  transform: scale(0.98);
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* Header */
