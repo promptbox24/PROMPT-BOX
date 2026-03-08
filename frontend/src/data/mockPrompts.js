@@ -186,3 +186,85 @@ export const howItWorks = [
     description: 'Receive high-quality AI outputs instantly'
   }
 ];
+
+// Category-specific prompts (10-20 per category)
+export const categoryPrompts = {
+  homework: [
+    { id: 'hw1', title: 'Essay Outline Generator', prompt: 'Create a detailed essay outline for [TOPIC]. Include: thesis statement, 3 main arguments with supporting evidence, counterarguments, and conclusion. Make it academic and well-structured.', description: 'Generate structured essay outlines with key points' },
+    { id: 'hw2', title: 'Math Problem Solver', prompt: 'Solve this math problem step-by-step: [PROBLEM]. Explain each step clearly and show why we use each formula. Include a visual diagram if helpful.', description: 'Get detailed math solutions with explanations' },
+    { id: 'hw3', title: 'Research Helper', prompt: 'Help me research [TOPIC]. Provide: 1) Key facts and statistics, 2) Important figures/people involved, 3) Timeline of events, 4) Different perspectives, 5) Credible sources to explore.', description: 'Comprehensive research assistance' },
+    { id: 'hw4', title: 'Study Guide Creator', prompt: 'Create a study guide for [SUBJECT/CHAPTER]. Include: main concepts, key terms with definitions, practice questions, mnemonics to remember, and real-world applications.', description: 'Personalized study guides for any subject' },
+    { id: 'hw5', title: 'Grammar Checker', prompt: 'Review this text for grammar, spelling, and clarity: [PASTE TEXT]. Highlight errors, suggest improvements, and explain why each change makes it better.', description: 'Improve your writing with detailed feedback' },
+    { id: 'hw6', title: 'Science Concept Explainer', prompt: 'Explain [SCIENCE CONCEPT] like I\'m [AGE] years old. Use simple analogies, real-world examples, and avoid jargon. Include why it matters in everyday life.', description: 'Understand complex science concepts easily' },
+    { id: 'hw7', title: 'History Timeline Builder', prompt: 'Create a timeline for [HISTORICAL EVENT/PERIOD]. Include: key dates, important figures, major events, cause and effect relationships, and lasting impact.', description: 'Visualize historical events clearly' },
+    { id: 'hw8', title: 'Book Report Assistant', prompt: 'Help me write a book report for "[BOOK TITLE]". Include: plot summary, character analysis, themes, my personal opinion, and why others should/shouldn\'t read it.', description: 'Comprehensive book report help' },
+    { id: 'hw9', title: 'Lab Report Writer', prompt: 'Help me write a lab report for [EXPERIMENT]. Include: hypothesis, materials, procedure, observations, data analysis, conclusion, and sources of error.', description: 'Professional lab reports made easy' },
+    { id: 'hw10', title: 'Vocabulary Builder', prompt: 'Teach me these vocabulary words: [LIST WORDS]. For each word, provide: definition, example sentence, synonyms, origin, and a memory trick to remember it.', description: 'Learn new words effectively' },
+    { id: 'hw11', title: 'Citation Generator', prompt: 'Create [MLA/APA/Chicago] citations for these sources: [LIST SOURCES]. Format them perfectly and explain what each part of the citation means.', description: 'Perfect citations every time' },
+    { id: 'hw12', title: 'Practice Test Generator', prompt: 'Create a practice test for [SUBJECT/CHAPTER]. Include: 10 multiple choice, 5 short answer, and 2 essay questions. Provide an answer key with explanations.', description: 'Test your knowledge before exams' },
+    { id: 'hw13', title: 'Reading Comprehension', prompt: 'Help me understand this passage: [PASTE TEXT]. Explain: main idea, supporting details, author\'s purpose, tone, and any literary devices used.', description: 'Master reading comprehension' },
+    { id: 'hw14', title: 'Project Planner', prompt: 'Help me plan my [TYPE] project on [TOPIC]. Create: timeline, task breakdown, resource list, potential challenges, and success criteria.', description: 'Organize projects from start to finish' },
+    { id: 'hw15', title: 'Presentation Outline', prompt: 'Create an outline for a [TIME LENGTH] presentation on [TOPIC]. Include: opening hook, main points, supporting examples, visual aids suggestions, and strong conclusion.', description: 'Structure winning presentations' }
+  ],
+  
+  creative: [
+    { id: 'cr1', title: 'Story Starter', prompt: 'Generate a creative story opening about [THEME/TOPIC]. Include: interesting character, unique setting, compelling conflict. Make it engaging from the first sentence.', description: 'Begin your story with a bang' },
+    { id: 'cr2', title: 'Character Creator', prompt: 'Create a detailed character for my story. Include: name, age, appearance, personality traits, backstory, motivations, fears, and a unique quirk.', description: 'Develop memorable characters' },
+    { id: 'cr3', title: 'Plot Twist Generator', prompt: 'Suggest 5 plot twists for my story about [BRIEF PLOT]. Make them surprising, logical, and impactful to the overall narrative.', description: 'Add exciting twists to your stories' },
+    { id: 'cr4', title: 'Dialogue Writer', prompt: 'Write a dialogue between [CHARACTER A] and [CHARACTER B] about [TOPIC]. Show their personalities through their word choices and speech patterns.', description: 'Create authentic conversations' },
+    { id: 'cr5', title: 'World Builder', prompt: 'Help me create a [GENRE] world for my story. Include: geography, culture, magic/technology system, history, conflicts, and unique features.', description: 'Build immersive fictional worlds' },
+    { id: 'cr6', title: 'Poetry Generator', prompt: 'Write a [TYPE] poem about [TOPIC]. Use: vivid imagery, sensory details, metaphors, and [CHOOSE: rhyme scheme/free verse]. Make it emotionally engaging.', description: 'Craft beautiful poetry' },
+    { id: 'cr7', title: 'Scene Describer', prompt: 'Describe this scene vividly: [DESCRIBE SCENE]. Use all five senses, show don\'t tell, create atmosphere, and make readers feel like they\'re there.', description: 'Paint pictures with words' },
+    { id: 'cr8', title: 'Conflict Creator', prompt: 'Create a central conflict for my story involving [CHARACTERS/SITUATION]. Make it meaningful, solvable yet challenging, and relevant to the theme.', description: 'Develop compelling story conflicts' },
+    { id: 'cr9', title: 'Ending Crafter', prompt: 'Help me write a satisfying ending for my story about [BRIEF PLOT]. Tie up loose ends, deliver emotional payoff, and leave readers thinking.', description: 'Conclude your stories powerfully' },
+    { id: 'cr10', title: 'Title Generator', prompt: 'Suggest 10 creative titles for my story about [BRIEF SYNOPSIS]. Make them: catchy, memorable, hint at the theme, and appropriate for [TARGET AUDIENCE].', description: 'Find the perfect title' },
+    { id: 'cr11', title: 'Metaphor Maker', prompt: 'Create 5 unique metaphors to describe [CONCEPT/FEELING]. Make them original, vivid, and help readers understand it in a new way.', description: 'Enhance your writing with metaphors' },
+    { id: 'cr12', title: 'Flashback Writer', prompt: 'Write a flashback scene showing [CHARACTER]\'s past that explains [PRESENT SITUATION]. Transition smoothly in and out of the flashback.', description: 'Add depth with backstory' },
+    { id: 'cr13', title: 'Genre Mixer', prompt: 'Combine [GENRE 1] with [GENRE 2] to create a unique story concept. Explain how the genres blend and what makes it fresh.', description: 'Create original genre combinations' },
+    { id: 'cr14', title: 'Writing Prompt', prompt: 'Give me 5 creative writing prompts about [THEME]. Make them: specific enough to start, open enough for creativity, and suitable for [AGE/SKILL LEVEL].', description: 'Beat writer\'s block' },
+    { id: 'cr15', title: 'Story Arc Planner', prompt: 'Plan a complete story arc for [BRIEF CONCEPT]. Include: exposition, rising action, climax, falling action, resolution. Show how tension builds.', description: 'Structure your narrative perfectly' }
+  ],
+  
+  gaming: [
+    { id: 'gm1', title: 'Game Concept Creator', prompt: 'Design a unique [GENRE] game concept. Include: core gameplay loop, main mechanics, art style, target audience, and what makes it different.', description: 'Invent original game ideas' },
+    { id: 'gm2', title: 'Level Designer', prompt: 'Design a challenging game level for [GAME TYPE]. Include: layout, obstacles, enemies, power-ups, difficulty curve, and a secret area.', description: 'Create engaging game levels' },
+    { id: 'gm3', title: 'Game Character Design', prompt: 'Create a game character with: unique abilities, backstory, visual design, special moves, strengths, weaknesses, and role in the game.', description: 'Design memorable game characters' },
+    { id: 'gm4', title: 'Boss Fight Planner', prompt: 'Design an epic boss fight for [GAME TYPE]. Include: boss appearance, attack patterns, phases, weaknesses, and strategy to defeat.', description: 'Craft challenging boss battles' },
+    { id: 'gm5', title: 'Game Story Writer', prompt: 'Write a compelling story for a [GENRE] game. Include: protagonist goal, main conflict, plot twists, side quests, and satisfying ending.', description: 'Add narrative depth to games' },
+    { id: 'gm6', title: 'Achievement System', prompt: 'Create 15 achievements for [GAME CONCEPT]. Mix: easy, medium, hard, hidden, and creative achievements that encourage different playstyles.', description: 'Design rewarding achievements' },
+    { id: 'gm7', title: 'Game Mechanic Idea', prompt: 'Invent a unique game mechanic involving [THEME/CONCEPT]. Explain how it works, what makes it fun, and how it affects gameplay.', description: 'Innovate new mechanics' },
+    { id: 'gm8', title: 'Multiplayer Mode', prompt: 'Design a multiplayer mode for [GAME TYPE]. Include: player count, objectives, maps, power-ups, and what makes it replayable.', description: 'Create fun multiplayer experiences' },
+    { id: 'gm9', title: 'Game Tutorial Designer', prompt: 'Design a tutorial level for [GAME] that teaches: basic controls, core mechanics, advanced techniques. Make it fun, not boring.', description: 'Teach players effectively' },
+    { id: 'gm10', title: 'World Building', prompt: 'Create a game world for [GENRE]. Include: different regions, lore, cultures, conflicts, secrets, and how players explore it.', description: 'Build immersive game worlds' },
+    { id: 'gm11', title: 'Item/Weapon Design', prompt: 'Design 5 unique [items/weapons] for [GAME TYPE]. For each: name, appearance, stats, special ability, and how to obtain it.', description: 'Create exciting game items' },
+    { id: 'gm12', title: 'Game Balancing', prompt: 'Balance this game element: [DESCRIBE ELEMENT]. Analyze: is it too strong/weak? Suggest numbers, cooldowns, or changes to make it fair.', description: 'Perfect game balance' },
+    { id: 'gm13', title: 'Quest Designer', prompt: 'Create a memorable side quest for [GAME]. Include: quest giver, objective, challenge, choices, rewards, and how it ties to the main story.', description: 'Design engaging quests' },
+    { id: 'gm14', title: 'Game UI Ideas', prompt: 'Design a user-friendly UI for [GAME TYPE]. Describe: menu layout, HUD elements, inventory system, and how players navigate smoothly.', description: 'Create intuitive interfaces' },
+    { id: 'gm15', title: 'Esports Strategy', prompt: 'Create a competitive strategy for [GAME/CHARACTER]. Include: team composition, tactics, counter-play, and tips to climb ranked.', description: 'Master competitive gaming' }
+  ],
+  
+  science: [
+    { id: 'sci1', title: 'Simple Science Explainer', prompt: 'Explain [SCIENCE CONCEPT] using: simple words, everyday analogies, real-world examples. Make it understandable for someone with no science background.', description: 'Understand complex science simply' },
+    { id: 'sci2', title: 'Experiment Designer', prompt: 'Design a safe home experiment to demonstrate [CONCEPT]. Include: materials, steps, what to observe, explanation of results, and safety tips.', description: 'Try science at home' },
+    { id: 'sci3', title: 'Science vs Myth', prompt: 'Explain the science behind [COMMON BELIEF/MYTH]. Is it true or false? Use evidence, explain the real science, and why the myth exists.', description: 'Separate fact from fiction' },
+    { id: 'sci4', title: 'How Things Work', prompt: 'Explain how [DEVICE/PHENOMENON] works step-by-step. Break it down simply, use analogies, and explain the science behind each part.', description: 'Discover how things function' },
+    { id: 'sci5', title: 'Scientific Method Guide', prompt: 'Guide me through the scientific method for researching [QUESTION]. Help with: hypothesis, experiment design, variables, data collection, and conclusion.', description: 'Apply scientific thinking' },
+    { id: 'sci6', title: 'Space Explorer', prompt: 'Tell me about [SPACE OBJECT/PHENOMENON]. Include: what it is, how it formed, interesting facts, and why scientists study it.', description: 'Explore the universe' },
+    { id: 'sci7', title: 'Body Biology', prompt: 'Explain how my [BODY SYSTEM/ORGAN] works. Use simple terms, explain what could go wrong, and how to keep it healthy.', description: 'Understand your body' },
+    { id: 'sci8', title: 'Chemistry in Life', prompt: 'Explain the chemistry behind [EVERYDAY PROCESS]. What reactions occur? What molecules are involved? Make it relatable and visual.', description: 'See chemistry everywhere' },
+    { id: 'sci9', title: 'Physics Problem Solver', prompt: 'Solve this physics problem: [PROBLEM]. Show all work, explain each step, draw diagrams, and verify the answer makes sense.', description: 'Master physics problems' },
+    { id: 'sci10', title: 'Environmental Science', prompt: 'Explain [ENVIRONMENTAL ISSUE]. Cover: causes, effects, current solutions, and what individuals can do to help.', description: 'Understand environmental challenges' },
+    { id: 'sci11', title: 'Evolution & Adaptation', prompt: 'Explain how [ORGANISM] evolved [TRAIT]. Include: selective pressures, time scale, evidence, and how it helps survival today.', description: 'Learn about evolution' },
+    { id: 'sci12', title: 'Science News Explainer', prompt: 'Explain this recent science discovery: [NEWS HEADLINE]. What did they find? Why does it matter? What are the implications?', description: 'Stay current with science' },
+    { id: 'sci13', title: 'Scientific Career Path', prompt: 'Describe what a [SCIENTIST TYPE] does. Include: education needed, daily work, research topics, challenges, and impact on society.', description: 'Explore science careers' },
+    { id: 'sci14', title: 'Science Quiz Creator', prompt: 'Create a 10-question quiz about [SCIENCE TOPIC]. Mix: multiple choice, true/false, short answer. Include answers and explanations.', description: 'Test your knowledge' },
+    { id: 'sci15', title: 'Science Fair Project', prompt: 'Help me plan a science fair project about [TOPIC]. Include: question, hypothesis, procedure, expected results, and presentation tips.', description: 'Win the science fair' }
+  ],
+  // Add similar arrays for art, coding, math, reading, languages, health
+  art: [],
+  coding: [],
+  math: [],
+  reading: [],
+  languages: [],
+  health: []
+};
