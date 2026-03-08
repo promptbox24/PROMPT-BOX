@@ -65,16 +65,43 @@ const ChatbotPage = ({ user }) => {
     setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
     setIsLoading(true);
 
-    // Simulate AI response with enhanced prompts
-    setTimeout(() => {
-      const response = generateEnhancedPrompt(userMessage);
+    try {
+      // Call real backend API
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/chat/message`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include', // Include cookies for auth
+        body: JSON.stringify({
+          message: userMessage,
+          session_id: messages.length > 1 ? messages[1]?.session_id : undefined
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get response');
+      }
+
+      const data = await response.json();
       
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: response 
+        content: data.reply,
+        session_id: data.session_id
       }]);
+    } catch (error) {
+      console.error('Chat error:', error);
+      // Fallback to enhanced mock response
+      const mockResponse = generateEnhancedPrompt(userMessage);
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: mockResponse 
+      }]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   const handleKeyPress = (e) => {
