@@ -1,25 +1,25 @@
-/* Kid-Friendly Dark Theme Variables */
+/* Figma Design Colors */
 :root {
-  /* Backgrounds - Dark Navy/Purple Theme */
-  --bg-primary: #1a1a2e;
-  --bg-secondary: #252547;
-  --bg-overlay: rgba(255, 255, 255, 0.1);
+  /* Backgrounds - Exact Figma Colors */
+  --bg-primary: #0A0118;
+  --bg-secondary: #111827;
+  --bg-overlay: rgba(139, 92, 246, 0.1);
   
   /* Text - High Contrast */
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.9);
-  --text-muted: #9ca3af;
+  --text-secondary: #B0A0E0;
+  --text-muted: #6B7280;
   
-  /* Borders - Playful */
-  --border-subtle: rgba(138, 99, 255, 0.3);
-  --border-medium: rgba(138, 99, 255, 0.5);
+  /* Borders */
+  --border-subtle: rgba(139, 92, 246, 0.2);
+  --border-medium: rgba(139, 92, 246, 0.4);
   
-  /* Brand Colors - Vibrant & Playful */
-  --brand-primary: #8a63ff;
-  --brand-secondary: #4facfe;
-  --brand-hover: rgba(138, 99, 255, 0.15);
-  --brand-active: #a78bfa;
-  --brand-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Brand Colors - Exact from Figma */
+  --brand-primary: #4F46E5;
+  --brand-purple: #8B5CF6;
+  --brand-pink: #EC4899;
+  --brand-cyan: #06B6D4;
+  --brand-gradient: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
 }
 
 * {
