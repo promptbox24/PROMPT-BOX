@@ -116,7 +116,7 @@ grep ERROR /var/log/supervisor/backend.out.log
 ## 🌐 API Endpoints
 
 ### Base URL
-`https://copy-prompt.preview.emergentagent.com/api`
+`https://prompt-box-1.preview.emergentagent.com/api`
 
 ### Authentication Endpoints
 
@@ -253,7 +253,7 @@ sudo supervisorctl restart backend
 
 ### Test Health Check
 ```bash
-curl https://copy-prompt.preview.emergentagent.com/api/health
+curl https://prompt-box-1.preview.emergentagent.com/api/health
 ```
 
 ### Test Authentication
@@ -264,7 +264,7 @@ curl https://copy-prompt.preview.emergentagent.com/api/health
 
 ### Test Box Bot (with auth token)
 ```bash
-curl -X POST https://copy-prompt.preview.emergentagent.com/api/chat/message \
+curl -X POST https://prompt-box-1.preview.emergentagent.com/api/chat/message \
   -H "Content-Type: application/json" \
   -H "Cookie: session_token=YOUR_SESSION_TOKEN" \
   -d '{"message": "Help me with essay writing"}'
@@ -303,7 +303,7 @@ mongosh --eval "db.adminCommand('ping')"
 tail -f /var/log/supervisor/backend.out.log
 
 # Test specific endpoint
-curl -v https://copy-prompt.preview.emergentagent.com/api/
+curl -v https://prompt-box-1.preview.emergentagent.com/api/
 ```
 
 ---
@@ -328,7 +328,7 @@ sudo supervisorctl restart backend
 
 **3. Test:**
 ```bash
-curl https://copy-prompt.preview.emergentagent.com/api/prompt-of-day
+curl https://prompt-box-1.preview.emergentagent.com/api/prompt-of-day
 ```
 
 ---
@@ -405,7 +405,7 @@ sudo supervisorctl restart all
 tail -f /var/log/supervisor/*.log
 
 # Check backend status
-curl https://copy-prompt.preview.emergentagent.com/api/health
+curl https://prompt-box-1.preview.emergentagent.com/api/health
 
 # Access MongoDB
 mongosh

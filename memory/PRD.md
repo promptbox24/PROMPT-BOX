@@ -56,7 +56,7 @@ db.users.find()
 ```
 
 ### API Base URL
-`https://copy-prompt.preview.emergentagent.com/api`
+`https://prompt-box-1.preview.emergentagent.com/api`
 
 ---
 
@@ -293,7 +293,7 @@ GET /api/health - System health check
 ### Check System Health
 ```bash
 # Backend status
-curl https://copy-prompt.preview.emergentagent.com/api/health
+curl https://prompt-box-1.preview.emergentagent.com/api/health
 
 # Database
 mongosh --eval "db.users.countDocuments()"
@@ -345,5 +345,5 @@ db.users.countDocuments()
 
 **🚀 Your Prompt Box Is Live & Ready!**
 
-Access at: https://copy-prompt.preview.emergentagent.com
+Access at: https://prompt-box-1.preview.emergentagent.com
 Backend Management: /app/BACKEND_MANAGEMENT.md

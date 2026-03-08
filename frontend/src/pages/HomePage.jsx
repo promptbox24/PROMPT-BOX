@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { promptCategories } from '../data/mockPrompts';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, BookOpen, Video, Briefcase, Zap, Code, Heart, PenTool, Palette, MessageCircle, Sparkles, CheckCircle, Clock, Layers, Users, Lightning } from 'lucide-react';
+import { ArrowRight, BookOpen, Video, Briefcase, Zap, Code, Heart, PenTool, Palette, MessageCircle, Sparkles, CheckCircle, Clock, Layers, Users, Bolt } from 'lucide-react';
 
 const categoryIcons = {
   homework: BookOpen,
@@ -116,7 +116,7 @@ const HomePage = () => {
               animation: 'pulse-glow 3s ease-in-out infinite',
               boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'
             }}>
-              <Lightning size={16} color="#8B5CF6" />
+              <Bolt size={16} color="#8B5CF6" />
               Powered by Advanced AI • 100% Free Forever
             </div>
           </div>
