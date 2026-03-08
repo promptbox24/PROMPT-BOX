@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import ChatbotPage from "./pages/ChatbotPage";
+import CategoryDetailPage from "./pages/CategoryDetailPage";
 import Header from "./components/Header";
 
 function AppContent() {
@@ -26,6 +27,7 @@ function AppContent() {
         <Route path="/login" element={<AuthPage />} />
         <Route path="/dashboard" element={<HomePage />} />
         <Route path="/chatbot" element={<ChatbotPage user={user} />} />
+        <Route path="/category/:categoryId" element={<CategoryDetailPage />} />
       </Routes>
     </div>
   );

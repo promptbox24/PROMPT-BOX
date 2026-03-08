@@ -33,20 +33,20 @@ const Header = ({ user, onLogout }) => {
           onClick={(e) => { e.preventDefault(); navigate('/'); }}
           className={`dark-nav-link ${isActive('/') || isActive('/dashboard') ? 'active' : ''}`}
         >
-          🎯 Prompts
+          Prompts
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigate('/chatbot'); }}
           className={`dark-nav-link ${isActive('/chatbot') ? 'active' : ''}`}
         >
-          🤖 Box Bot
+          Box Bot
         </a>
         
         {user ? (
           <>
             <span className="dark-nav-link" style={{ color: 'var(--text-secondary)', cursor: 'default' }}>
-              👋 {user.name || user.email}
+              {user.name || user.email}
             </span>
             <button onClick={onLogout} className="btn-secondary" style={{ minHeight: '44px', padding: '10px 20px' }}>
               Logout
