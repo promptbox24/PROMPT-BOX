@@ -322,6 +322,81 @@ body {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* 3D Title Effects */
+.category-title-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Slide Down Animation for Expanded Content */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+/* Slide In Animation for Prompt Items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Wiggle Animation for Playful Effect */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.wiggle-on-hover:hover {
+  animation: wiggle 0.5s ease infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-effect {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Rainbow Text Effect */
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.rainbow-text {
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.scroll-hint {
+  animation: scroll 1s ease-in-out infinite alternate;
+}
+
 /* Spin animation for loading */
 @keyframes spin {
   from {

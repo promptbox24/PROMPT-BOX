@@ -12,10 +12,6 @@ const HomePage = () => {
     document.getElementById('prompts-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleCategoryClick = (categoryId) => {
-    navigate(`/category/${categoryId}`);
-  };
-
   return (
     <div className="dark-container">
       {/* Hero Section */}
@@ -180,7 +176,6 @@ const HomePage = () => {
               <CategoryCard 
                 key={category.id} 
                 category={category}
-                onClick={() => handleCategoryClick(category.id)}
               />
             ))}
           </div>
