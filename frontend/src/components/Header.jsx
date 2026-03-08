@@ -10,13 +10,20 @@ const Header = ({ user, onLogout }) => {
   return (
     <header className="dark-header">
       <div className="dark-logo" onClick={() => navigate('/')}>
+        <img 
+          src="https://customer-assets.emergentagent.com/job_copy-prompt/artifacts/qr4amo3s_Modern%20logo%20design%20with%20gradient%20box.png" 
+          alt="Prompt Box Logo"
+        />
         <span style={{ 
           fontSize: '24px', 
-          fontWeight: 600, 
-          color: 'var(--brand-primary)',
+          fontWeight: 700, 
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
           letterSpacing: '-0.02em'
         }}>
-          PromptBox
+          Prompt Box
         </span>
       </div>
       
@@ -26,22 +33,22 @@ const Header = ({ user, onLogout }) => {
           onClick={(e) => { e.preventDefault(); navigate('/'); }}
           className={`dark-nav-link ${isActive('/') || isActive('/dashboard') ? 'active' : ''}`}
         >
-          Prompts
+          🎯 Prompts
         </a>
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); navigate('/chatbot'); }}
           className={`dark-nav-link ${isActive('/chatbot') ? 'active' : ''}`}
         >
-          Box Bot
+          🤖 Box Bot
         </a>
         
         {user ? (
           <>
-            <span className="dark-nav-link" style={{ color: 'var(--text-secondary)' }}>
-              {user.name || user.email}
+            <span className="dark-nav-link" style={{ color: 'var(--text-secondary)', cursor: 'default' }}>
+              👋 {user.name || user.email}
             </span>
-            <button onClick={onLogout} className="btn-secondary" style={{ minHeight: '40px', padding: '8px 16px' }}>
+            <button onClick={onLogout} className="btn-secondary" style={{ minHeight: '44px', padding: '10px 20px' }}>
               Logout
             </button>
           </>
@@ -49,7 +56,7 @@ const Header = ({ user, onLogout }) => {
           <button 
             onClick={() => navigate('/login')} 
             className="btn-primary" 
-            style={{ minHeight: '40px', padding: '8px 16px' }}
+            style={{ minHeight: '44px', padding: '10px 20px' }}
           >
             Sign In
           </button>
